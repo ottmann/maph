@@ -3,12 +3,12 @@ package com.example.elisabeth.depressionsapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
+
+import com.example.elisabeth.depressionsapp.helper.ImageAdapter;
 
 public class MoodActivity extends AppCompatActivity {
 
@@ -34,6 +34,7 @@ public class MoodActivity extends AppCompatActivity {
 
                 //Change pictures in grid view
                 //Record selected image
+                startActivity(new Intent(MoodActivity.this, QuestionsActivity.class));
             }
         });
     }

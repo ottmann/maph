@@ -43,8 +43,9 @@
         <activity android:name=".AlexaActivity" />
         <activity android:name=".MusicActivity" />
 
+        <receiver android:name=".services.AlarmReceiver" />
 
-        <receiver android:name=".services.AlarmReceiver"></receiver>
+        <activity android:name=".QuestionsActivity"></activity>
     </application>
 
 </manifest>

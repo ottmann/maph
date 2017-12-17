@@ -1,9 +1,12 @@
-package com.example.elisabeth.depressionsapp;
+package com.example.elisabeth.depressionsapp.helper;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+
+import com.example.elisabeth.depressionsapp.R;
+import com.example.elisabeth.depressionsapp.helper.ImageAdapter;
 
 /**
  * Created by elisabeth on 28.11.17.
