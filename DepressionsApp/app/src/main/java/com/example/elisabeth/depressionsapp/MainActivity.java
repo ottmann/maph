@@ -143,7 +143,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.devices_alexa) {
             // Change to alexa settings activity
         } else if (id == R.id.devices_hue) {
-            // Change to hue settings activity
+            // Change to hue activity
+            Intent i = new Intent(getBaseContext(), HueActivity.class);
+            startActivity(i);
         } else if (id == R.id.devices_arduino) {
             // Change to arduino settings activity
         }
