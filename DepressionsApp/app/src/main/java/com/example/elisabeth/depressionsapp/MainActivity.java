@@ -3,9 +3,6 @@ package com.example.elisabeth.depressionsapp;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.elisabeth.depressionsapp.devices.AlexaActivity;
+import com.example.elisabeth.depressionsapp.devices.ArduinoActivity;
+import com.example.elisabeth.depressionsapp.devices.WatchActivity;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -116,6 +116,8 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
+    /** Add nav items to side nav */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -140,22 +142,24 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
         } else if (id == R.id.devices_watch) {
             // Change to watch settings activity
+            Intent i = new Intent(getBaseContext(), WatchActivity.class);
+            startActivity(i);
         } else if (id == R.id.devices_alexa) {
             // Change to alexa settings activity
             Intent i = new Intent(getBaseContext(), AlexaActivity.class);
             startActivity(i);
         } else if (id == R.id.devices_hue) {
             // Change to hue settings activity
+            //Intent i = new Intent(getBaseContext(), HueActivity.class);
+            //startActivity(i);
         } else if (id == R.id.devices_arduino) {
             // Change to arduino settings activity
+            Intent i = new Intent(getBaseContext(), ArduinoActivity.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-
-        System.out.println(getApplicationContext().getPackageName());
-        System.out.println(getApplicationContext().getPackageName());
-        System.out.println(getApplicationContext().getPackageName());
 
         return true;
     }

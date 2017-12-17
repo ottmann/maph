@@ -1,4 +1,4 @@
-package com.example.elisabeth.depressionsapp;
+package com.example.elisabeth.depressionsapp.devices;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.elisabeth.depressionsapp.R;
 import com.example.elisabeth.depressionsapp.model.DeviceItem;
 
 import java.util.ArrayList;
