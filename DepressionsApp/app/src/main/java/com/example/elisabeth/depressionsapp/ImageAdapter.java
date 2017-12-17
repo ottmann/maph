@@ -67,5 +67,7 @@ public class ImageAdapter extends BaseAdapter {
                                     R.drawable.ic_speaker_black_24dp,
                                     R.drawable.ic_sync_black_24dp,
                                     R.drawable.ic_timeline_black_24dp,
-                                    R.drawable.ic_watch_black_24dp};
+                                    R.drawable.ic_watch_black_24dp,
+                                    R.drawable.ic_audiotrack_black_24dp,
+                                    R.drawable.ic_developer_board_black_24dp};
 }

@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.elisabeth.depressionsapp">
 
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- Activities -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,9 +40,11 @@
         <activity
             android:name=".AlarmclockActivity"
             android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".Settings2Activity"
-            android:label="@string/title_activity_settings2"></activity>
+        <activity android:name=".AlexaActivity" />
+        <activity android:name=".MusicActivity" />
+
+
+        <receiver android:name=".services.AlarmReceiver"></receiver>
     </application>
 
 </manifest>

@@ -142,6 +142,8 @@ public class MainActivity extends AppCompatActivity
             // Change to watch settings activity
         } else if (id == R.id.devices_alexa) {
             // Change to alexa settings activity
+            Intent i = new Intent(getBaseContext(), AlexaActivity.class);
+            startActivity(i);
         } else if (id == R.id.devices_hue) {
             // Change to hue settings activity
         } else if (id == R.id.devices_arduino) {
@@ -150,6 +152,11 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
+        System.out.println(getApplicationContext().getPackageName());
+        System.out.println(getApplicationContext().getPackageName());
+        System.out.println(getApplicationContext().getPackageName());
+
         return true;
     }
 }
