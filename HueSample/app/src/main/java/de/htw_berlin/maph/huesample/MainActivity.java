@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CompoundButton;
+import android.widget.ToggleButton;
 
 import com.philips.lighting.hue.listener.PHLightListener;
 import com.philips.lighting.hue.sdk.PHAccessPoint;
@@ -24,6 +26,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     private PHHueSDK phHueSDK;
+    private PHAccessPoint accessPoint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,34 +34,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         phHueSDK = PHHueSDK.create();
 
-        PHAccessPoint accessPoint = new PHAccessPoint();
+        accessPoint = new PHAccessPoint();
         accessPoint.setIpAddress("192.168.178.24");
         accessPoint.setUsername("KkYEUbiyRlFZeyuyampMyLHk0oOSdvR807wi5QYw");
         phHueSDK.connect(accessPoint);
 
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton off = (FloatingActionButton) findViewById(R.id.off);
-        off.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                turnLightOff();
-            }
-        });
+        Log.i("DepressionsApp",  "Is access point connected? " + phHueSDK.isAccessPointConnected(accessPoint));
 
-        FloatingActionButton on = (FloatingActionButton) findViewById(R.id.on);
-        on.setOnClickListener(new View.OnClickListener(){
+        ToggleButton onOffButton = (ToggleButton) findViewById(R.id.toggleButton);
+        onOffButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+              if (isChecked) {
                 turnLightOn();
+              }else{
+                  turnLightOff();
+              }
             }
         });
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i("DepressionsApp", "Is access point connected? " + phHueSDK.isAccessPointConnected(accessPoint));
     }
 
     public void turnLightOn(){
+        Log.i("DepressionsApp",  "Is access point connected? " + phHueSDK.isAccessPointConnected(accessPoint));
+
         PHBridge bridge = phHueSDK.getSelectedBridge();
         List<PHLight> allLights = bridge.getResourceCache().getAllLights();
 
@@ -70,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void turnLightOff(){
+        Log.i("DepressionsApp",  "Is access point connected? " + phHueSDK.isAccessPointConnected(accessPoint));
+
         PHBridge bridge = phHueSDK.getSelectedBridge();
         List<PHLight> allLights = bridge.getResourceCache().getAllLights();
 
