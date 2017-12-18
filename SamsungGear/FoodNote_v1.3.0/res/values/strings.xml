@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Food Note</string>
+    <string name="desc">Total Calories</string>
+    <string name="today">Today</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">Dinner</string>
+    <string name="morning_snack">Morning Snack</string>
+    <string name="afternoon_snack">Afternoon Snack</string>
+    <string name="evening_snack">Evening Snack</string>
+
+    <string name="title_choose_food_activity">Choose %s Food</string>
+    <string name="total">Total</string>
+    <string name="unit1">Cals</string>
+    <string name="title_dialog_add_meal">Enter the take times</string>
+
+    <string name="msg_dialog_add_meal">%1$s : %2$.1f kcals/time</string>
+
+    <string name="confirm">Confirm</string>
+    <string name="move_before">Move Day Before</string>
+    <string name="move_next">Move Day Next</string>
+    <string name="choose_food">chooseFood</string>
+    <string name="delete">Delete</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="connect_to_shealth">Connect to Samsung Health</string>
+
+    <string name="notice">Notice</string>
+    <string name="msg_perm_acquired">All permissions should be acquired</string>
+    <string name="msg_conn_not_available">Connection with Samsung Health is not available</string>
+    <string name="msg_req_install">Please install Samsung Health</string>
+    <string name="msg_req_upgrade">Please upgrade Samsung Health</string>
+    <string name="msg_req_enable">Please enable Samsung Health</string>
+    <string name="msg_req_agree">Please agree with Samsung Health policy</string>
+    <string name="msg_req_available">Please make Samsung Health available</string>
+</resources>

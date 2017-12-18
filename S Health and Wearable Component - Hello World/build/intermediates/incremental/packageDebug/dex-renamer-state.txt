@@ -1,7 +1,0 @@
-#Sun Nov 12 16:45:35 CET 2017
-base.0=C\:\\Users\\AnnaToshiba2\\Desktop\\HealthData_Sample_SimpleHealth_v1.2.1\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_bbde88701c28d276e1aa9e59821d081c0280f16b
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=C\:\\Users\\AnnaToshiba2\\Desktop\\HealthData_Sample_SimpleHealth_v1.2.1\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_7208ca60fc404eb57ac6ffad7755b5b6da1e3ab6\\classes.dex
-base.1=C\:\\Users\\AnnaToshiba2\\Desktop\\HealthData_Sample_SimpleHealth_v1.2.1\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_7208ca60fc404eb57ac6ffad7755b5b6da1e3ab6
-file.0=C\:\\Users\\AnnaToshiba2\\Desktop\\HealthData_Sample_SimpleHealth_v1.2.1\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_bbde88701c28d276e1aa9e59821d081c0280f16b\\classes.dex

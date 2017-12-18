@@ -9,6 +9,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.elisabeth.depressionsapp.AlarmclockActivity">
 
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker"
+        android:layout_centerHorizontal="true" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,10 +24,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp" />
 
-    <TimePicker
+    <ToggleButton
+        android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/timePicker"
-        android:layout_alignTop="@+id/timePicker"
-        android:layout_centerHorizontal="true" />
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:checked="false"
+        android:onClick="OnToggleClicked"
+        android:layout_below="@+id/buttonSetAlarm"/>
 </RelativeLayout>
