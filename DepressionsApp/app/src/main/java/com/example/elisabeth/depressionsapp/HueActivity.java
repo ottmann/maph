@@ -51,7 +51,8 @@ public class HueActivity extends AppCompatActivity {
         phHueSDK.connect(accessPoint);
 
         //Wait until bridge is connected with the app
-        while(!phHueSDK.isAccessPointConnected(accessPoint)){}
+        int timeout_count = 10 * (int)Math.pow(10, 15);
+        for(int i = 0; i < timeout_count && !phHueSDK.isAccessPointConnected(accessPoint); i++){}
         Log.i("DepressionsApp", "Is access point connected? " + phHueSDK.isAccessPointConnected(accessPoint));
 
         PHBridge bridge = phHueSDK.getSelectedBridge();
@@ -74,7 +75,7 @@ public class HueActivity extends AppCompatActivity {
         temperature = lightState.getCt();
         isOn = lightState.isOn();
 
-        SeekBar brightnessBar = findViewById(R.id.brightnessBar);
+        SeekBar brightnessBar = (SeekBar) findViewById(R.id.brightnessBar);
         brightnessBar.setProgress(brightness);
         brightnessBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
@@ -94,7 +95,8 @@ public class HueActivity extends AppCompatActivity {
             }
         });
 
-        SeekBar temperatureBar = findViewById(R.id.temperatureBar);
+        SeekBar temperatureBar = (SeekBar) findViewById(R.id.temperatureBar);
+        //ToDo: android:min="153"
         temperatureBar.setProgress(temperature);
         temperatureBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
@@ -114,7 +116,7 @@ public class HueActivity extends AppCompatActivity {
             }
         });
 
-        Switch onOffButton = findViewById(R.id.onOffSwitch);
+        Switch onOffButton = (Switch) findViewById(R.id.onOffSwitch);
         onOffButton.setChecked(isOn);
         onOffButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
