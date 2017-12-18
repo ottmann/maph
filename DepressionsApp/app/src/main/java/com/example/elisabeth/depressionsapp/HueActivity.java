@@ -50,6 +50,7 @@ public class HueActivity extends AppCompatActivity {
         accessPoint.setUsername("iGctBGnxvNgaXshsdksmfdLulRNFc8C711naVV13");
         phHueSDK.connect(accessPoint);
 
+        //ToDo Validate if the timeout is to short.
         //Wait until bridge is connected with the app
         int timeout_count = 10 * (int)Math.pow(10, 15);
         for(int i = 0; i < timeout_count && !phHueSDK.isAccessPointConnected(accessPoint); i++){}
