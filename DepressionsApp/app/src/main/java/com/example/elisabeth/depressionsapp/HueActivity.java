@@ -56,8 +56,9 @@ public class HueActivity extends AppCompatActivity {
 
         PHBridge bridge = phHueSDK.getSelectedBridge();
 
-        int brightness = 254;
-        int temperature = 200;
+        int brightness = 0;
+        //https://developers.meethue.com/documentation/core-concepts
+        int temperature = 153;
         boolean isOn = false;
 
         if (bridge == null) {
