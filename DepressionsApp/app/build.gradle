@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '27.0.1'
 
     defaultConfig {
         applicationId "com.example.elisabeth.depressionsapp"
@@ -26,6 +26,7 @@ dependencies {
     compile 'com.android.support:support-v4:24.2.1'
     compile 'com.android.support:design:24.2.1'
     compile 'com.jjoe64:graphview:4.2.1'
-    implementation files('libs/huelocalsdk.jar')
-    implementation files('libs/huesdkresources.jar')
+//    implementation files('libs/huelocalsdk.jar')
+//    implementation files('libs/huesdkresources.jar')
+    //compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
