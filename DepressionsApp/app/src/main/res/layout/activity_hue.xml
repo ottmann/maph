@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="Lichttemperatur"
+            android:text="Lichttemperatur (weiß nach rot)"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="123dp" />
 
@@ -46,7 +46,8 @@
             android:id="@+id/temperatureBar"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:max="254"
+            android:min="153"
+            android:max="500"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="146dp" />
 
@@ -58,6 +59,18 @@
             android:text="Die Beleuchtung in deinem Zimmer hat eine direkte Auswirkung auf deine Stimme. Passe daher über die Helligkeit und Lichttemperatur deine Beleuchtung so an, dass sie dich positiv stimmt."
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="191dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="21dp" />
+
+        <Switch
+            android:id="@+id/onOffSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Ist deine Lampe eingeschalten?"
+             />
     </LinearLayout>
 
 
