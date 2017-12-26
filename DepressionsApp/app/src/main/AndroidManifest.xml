@@ -3,7 +3,6 @@
     package="com.example.elisabeth.depressionsapp">
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <!-- Permissions -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -36,15 +35,7 @@
         <activity
             android:name=".AlarmclockActivity"
             android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".HueActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".Settings2Activity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".devices.AlexaActivity"
-            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".MusicActivity"
             android:parentActivityName=".MainActivity" />
@@ -66,13 +57,20 @@
             </intent-filter>
         </activity>
 
+        <!-- devices -->
         <activity
             android:name=".devices.WatchActivity"
             android:parentActivityName=".MainActivity"/>
-
         <activity
             android:name=".devices.ArduinoActivity"
             android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".devices.HueActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".devices.AlexaActivity"
+            android:parentActivityName=".MainActivity" />
+
     </application>
 
 </manifest>

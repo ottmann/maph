@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.example.elisabeth.depressionsapp.devices.AlexaActivity;
 import com.example.elisabeth.depressionsapp.devices.ArduinoActivity;
+import com.example.elisabeth.depressionsapp.devices.HueActivity;
 import com.example.elisabeth.depressionsapp.devices.WatchActivity;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -150,6 +151,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
         } else if (id == R.id.devices_hue) {
             // Change to hue activity
+            System.out.println("Clicking Hue Activity");
             Intent i = new Intent(getBaseContext(), HueActivity.class);
             startActivity(i);
         } else if (id == R.id.devices_arduino) {

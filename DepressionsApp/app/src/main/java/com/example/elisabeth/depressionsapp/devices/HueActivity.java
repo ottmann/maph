@@ -1,4 +1,4 @@
-package com.example.elisabeth.depressionsapp;
+package com.example.elisabeth.depressionsapp.devices;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.example.elisabeth.depressionsapp.R;
 import com.philips.lighting.hue.sdk.PHAccessPoint;
 import com.philips.lighting.hue.sdk.PHHueSDK;
 
@@ -56,7 +57,7 @@ public class HueActivity extends AppCompatActivity {
         for(int i = 0; i < timeout_count && !phHueSDK.isAccessPointConnected(accessPoint); i++){}
         Log.i("DepressionsApp", "Is access point connected? " + phHueSDK.isAccessPointConnected(accessPoint));
 
-        PHBridge bridge = phHueSDK.getSelectedBridge();
+        PHBridge bridge= phHueSDK.getSelectedBridge();
 
         int brightness = 0;
         //https://developers.meethue.com/documentation/core-concepts
