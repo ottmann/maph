@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Allgemeine Einstellungen:"
+        android:text="@string/settingsActivity_generalSettings"
         android:id="@+id/textView10"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -23,7 +23,7 @@
     <Switch
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Push Benachrichtungen"
+        android:text="@string/settingsActivity_pushNotifications"
         android:id="@+id/switch1"
         android:layout_alignParentStart="true"
         android:checked="true"
@@ -32,7 +32,7 @@
     <Switch
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Automatisch Musik abspielen"
+        android:text="@string/settingsActivity_autoPlay"
         android:id="@+id/switch2"
         android:checked="true"
         android:layout_below="@+id/switch1"
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Intervall Stimmungsabfrage"
+        android:text="@string/settingsActivity_moodQuestionnaireInterval"
         android:id="@+id/textView15"
         android:layout_below="@+id/switch2"
         android:layout_alignParentStart="true"
@@ -52,38 +52,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Sprache/Language:"
-        android:id="@+id/textView11"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView15"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Deutsch"
-        android:id="@+id/radioButton3"
-        android:layout_below="@+id/textView11"
-        android:layout_alignParentStart="true"
-        android:checked="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Englisch"
-        android:id="@+id/radioButton4"
-        android:layout_below="@+id/radioButton3"
-        android:layout_alignParentStart="true"
-        android:checked="false" />
+        android:text="@string/settingsActivity_moodQuestionnaireIntervalVariable"
+        android:id="@+id/textView8"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/switch2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Daten:"
-        android:id="@+id/textView12"
-        android:layout_below="@+id/radioButton4"
+        android:text="@string/settingsActivity_language"
+        android:id="@+id/textView11"
+        android:layout_below="@+id/textView15"
         android:layout_alignParentStart="true"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp" />
@@ -91,30 +72,64 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Die gesammelten Daten werden auf deinem Handy lokal gespeichert. "
-        android:id="@+id/textView13"
-        android:layout_below="@+id/textView12"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/settingsActivity_data"
+        android:id="@+id/textView12"
         android:layout_alignParentStart="true"
-        android:textColor="@color/Black"/>
+        android:layout_below="@+id/radioGroup"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Hier kannst du deinen Account und alle deine Daten löschen. Du kannst dann keine vergangenen Visualisierungen mer einsehen."
+        android:text="@string/settingsActivity_dataExplanation"
+        android:id="@+id/textView13"
+        android:textColor="@color/Black"
+        android:layout_below="@+id/textView12"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/settingsActivity_deleteDataExplanation"
         android:id="@+id/textView14"
+        android:textColor="@color/Black"
         android:layout_below="@+id/textView13"
-        android:layout_alignParentStart="true"
-        android:textColor="@color/Black"/>
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Daten löschen"
+        android:text="@string/settingsActivity_deleteData"
         android:id="@+id/button2"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView14"
-        android:layout_marginTop="5dp" />
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/textView11"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settingsActivity_langDe"
+            android:id="@+id/radioButtonDe"
+            android:checked="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settingsActivity_langEn"
+            android:id="@+id/radioButtonEn"
+            android:checked="false" />
+    </RadioGroup>
 </RelativeLayout>

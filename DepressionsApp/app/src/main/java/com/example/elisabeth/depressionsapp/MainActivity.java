@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RatingBar;
 
 import com.example.elisabeth.depressionsapp.devices.AlexaActivity;
 import com.example.elisabeth.depressionsapp.devices.ArduinoActivity;
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         fillGraphView();
+
+        RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        ratingBar.setEnabled(false);
     }
 
     /** Populates the graph view on the main page with data */
@@ -95,12 +99,13 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
+    //Three dots menu in action bar
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -136,6 +141,10 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_alarmclock) {
             // Change to get visualisations activity
             Intent i = new Intent(getBaseContext(), AlarmclockActivity.class);
+            startActivity(i);
+        } else if (id == R.id.nav_music) {
+            // Change to get visualisations activity
+            Intent i = new Intent(getBaseContext(), MusicActivity.class);
             startActivity(i);
         } else if (id == R.id.nav_settings) {
             // Change to settings activity

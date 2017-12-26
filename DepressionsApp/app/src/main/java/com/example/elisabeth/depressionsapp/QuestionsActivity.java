@@ -22,19 +22,24 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hsalf.smilerating.SmileRating;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class QuestionsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class QuestionsActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = QuestionsActivity.class.getSimpleName();
 
     private List<String> answersQuestions = new ArrayList<String>();
-    List<String> dropdownAnswerList1, dropdownAnswerList2, dropdownAnswerList3, dropdownAnswerList4, dropdownAnswerList5;
+    //List<String> dropdownAnswerList1, dropdownAnswerList2, dropdownAnswerList3, dropdownAnswerList4, dropdownAnswerList5;
+    //private int spinnerItem, spinnerItem2, spinnerItem3, spinnerItem4, spinnerItem5;
 
-    private int spinnerItem, spinnerItem2, spinnerItem3, spinnerItem4, spinnerItem5;
+    SmileRating smileRating1, smileRating2, smileRating3, smileRating4, smileRating5;
+    int level1, level2, level3, level4, level5;
+
     Locale locale;
 
     @Override
@@ -42,12 +47,12 @@ public class QuestionsActivity extends AppCompatActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
 
-        answersQuestions.add("Die ganze Zeit");
-        answersQuestions.add("Meistens");
-        answersQuestions.add("Mehr als die Hälfte");
-        answersQuestions.add("Weniger als die Hälfte");
-        answersQuestions.add("Ab und zu");
-        answersQuestions.add("Nie");
+        answersQuestions.add("Stimme voll zu");
+        answersQuestions.add("Stimme zu");
+        answersQuestions.add("Stimme eher zu");
+        answersQuestions.add("Stimme eher nicht zu");
+        answersQuestions.add("Stimme nicht zu");
+        answersQuestions.add("Stimme gar nicht zu");
 
         //TODO: use to save data to DB
         /*findViewById(R.id.buttonSubmitForm).setOnClickListener(new View.OnClickListener() {
@@ -67,28 +72,52 @@ public class QuestionsActivity extends AppCompatActivity implements AdapterView.
                     startActivity(new Intent(QuestionsActivity.this, MainActivity.class));
                 } else {
                     //show toast prompting user to input an animal and a description
-                    Toast.makeText(getApplication().getBaseContext(), getString(R.string.please_select_from_spinners),
+                    Toast.makeText(getApplication().getBaseContext(), getString(R.string.moodActivity_please_select_from_spinners),
                             Toast.LENGTH_SHORT).show();
                 }
             }
         });*/
 
+        //Get all the smiley rating bars from the layout
+        smileRating1 = (SmileRating) findViewById(R.id.smile_rating_1);
+        smileRating2 = (SmileRating) findViewById(R.id.smile_rating_2);
+        smileRating3 = (SmileRating) findViewById(R.id.smile_rating_3);
+        smileRating4 = (SmileRating) findViewById(R.id.smile_rating_4);
+        smileRating5 = (SmileRating) findViewById(R.id.smile_rating_5);
+
+
+
         findViewById(R.id.buttonSubmitForm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(QuestionsActivity.this, MainActivity.class));
+
+                //Get smiley rating input values (1-5, 0 if nothing selected)
+                level1 = smileRating1.getRating();
+                level2 = smileRating2.getRating();
+                level3 = smileRating3.getRating();
+                level4 = smileRating4.getRating();
+                level5 = smileRating5.getRating();
+
+                if (level1 != 0 && level2 != 0 && level3 != 0 && level4 != 0 && level5 != 0) {
+                    startActivity(new Intent(QuestionsActivity.this, MainActivity.class));
+                    Toast.makeText(getApplication().getBaseContext(), getString(R.string.moodActivity_toastSuccess),
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication().getBaseContext(), getString(R.string.moodActivity_toastNoInput),
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 
         //TODO: use for internationalization
         locale = getResources().getConfiguration().locale;
 
-        //TODO: in funktion auslagern
+        /*//TODO: in funktion auslagern
         //Dropdown spinner, containing all the answers
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
         dropdownAnswerList1 = new ArrayList<String>();
-        dropdownAnswerList1.add(getString(R.string.please_select));
+        dropdownAnswerList1.add(getString(R.string.moodActivity_please_select));
         for (String s : answersQuestions) {
             //if (locale.equals(Locale.ENGLISH)) {
             //dropdownAnswerList1.add(s);
@@ -111,7 +140,7 @@ public class QuestionsActivity extends AppCompatActivity implements AdapterView.
         Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
         spinner.setOnItemSelectedListener(this);
         dropdownAnswerList2 = new ArrayList<String>();
-        dropdownAnswerList2.add(getString(R.string.please_select));
+        dropdownAnswerList2.add(getString(R.string.moodActivity_please_select));
         for (String s : answersQuestions) {
             dropdownAnswerList2.add(s);
         }
@@ -130,7 +159,7 @@ public class QuestionsActivity extends AppCompatActivity implements AdapterView.
         Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
         spinner.setOnItemSelectedListener(this);
         dropdownAnswerList3 = new ArrayList<String>();
-        dropdownAnswerList3.add(getString(R.string.please_select));
+        dropdownAnswerList3.add(getString(R.string.moodActivity_please_select));
         for (String s : answersQuestions) {
             //if (locale.equals(Locale.ENGLISH)) {
             //dropdownAnswerList1.add(s);
@@ -153,7 +182,7 @@ public class QuestionsActivity extends AppCompatActivity implements AdapterView.
         Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
         spinner.setOnItemSelectedListener(this);
         dropdownAnswerList4 = new ArrayList<String>();
-        dropdownAnswerList4.add(getString(R.string.please_select));
+        dropdownAnswerList4.add(getString(R.string.moodActivity_please_select));
         for (String s : answersQuestions) {
             //if (locale.equals(Locale.ENGLISH)) {
             //dropdownAnswerList1.add(s);
@@ -176,7 +205,7 @@ public class QuestionsActivity extends AppCompatActivity implements AdapterView.
         Spinner spinner5 = (Spinner) findViewById(R.id.spinner5);
         spinner.setOnItemSelectedListener(this);
         dropdownAnswerList5 = new ArrayList<String>();
-        dropdownAnswerList5.add(getString(R.string.please_select));
+        dropdownAnswerList5.add(getString(R.string.moodActivity_please_select));
         for (String s : answersQuestions) {
             //if (locale.equals(Locale.ENGLISH)) {
             //dropdownAnswerList1.add(s);
@@ -193,11 +222,11 @@ public class QuestionsActivity extends AppCompatActivity implements AdapterView.
 
         // Sets the dropdown layout style and attaches the data adapter to the spinner
         dataAdapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner5.setAdapter(dataAdapter5);
+        spinner5.setAdapter(dataAdapter5);*/
 
         }
 
-        @Override
+        /*@Override
         public void onItemSelected (AdapterView < ? > adapterView, View view,int i, long l){
 
             adapterView.getItemAtPosition(i);
@@ -224,7 +253,7 @@ public class QuestionsActivity extends AppCompatActivity implements AdapterView.
             Spinner spinner = (Spinner) findViewById(R.id.spinner);
             spinner.setOnItemSelectedListener(this);
             dropdownAnswerList = new ArrayList<String>();
-            dropdownAnswerList.add(getString(R.string.please_select));
+            dropdownAnswerList.add(getString(R.string.moodActivity_please_select));
             for (String s : answersQuestions) {
                 //if (locale.equals(Locale.ENGLISH)) {
                 //dropdownAnswerList1.add(s);
@@ -232,6 +261,6 @@ public class QuestionsActivity extends AppCompatActivity implements AdapterView.
                 dropdownAnswerList.add(s);
                 //}
             }
-        }
+        }*/
 }
 

@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name" translatable="false">DepressionsApp</string>
+
+    <!-- Drawer Menu strings -->
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="connected_devices" translatable="false">Verbundene Geräte</string>
+    <string name="device_alexa" translatable="false">Amazon Alexa</string>
+    <string name="device_hue" translatable="false">Phillips Hue</string>
+    <string name="device_arduino" translatable="false">Arduino Sensorboard</string>
+    <string name="device_watch" translatable="false">Samsung Gear</string>
+    <string name="nav_item_mood" translatable="false">Stimmung dokumentieren</string>
+    <string name="nav_item_visualisation" translatable="false">Visualisierungen</string>
+    <string name="nav_item_settings" translatable="false">Einstellungen</string>
+    <string name="nav_item_alarmclock" translatable="false">Schlafphasenwecker</string>
+    <string name="nav_item_music" translatable="false">Musik</string>
+    <string name="title_activity_settings" translatable="false">Settings</string>
+
+    <!-- Alarm Activity strings -->
+    <string name="button_setAlarm" translatable="false">Alarm einstellen</string>
+
+    <!-- Hue Activity strings -->
+    <string name="hueActivity_brightness" translatable="false">Helligkeit</string>
+    <string name="hueActivity_lightTemperature" translatable="false">Lichttemperatur (weiß nach rot)</string>
+    <string name="hueActivity_lampSwichtedOn" translatable="false">Ist deine Lampe eingeschaltet?</string>
+    <string name="hueActivity_lightExplanation" translatable="false">Die Beleuchtung in deinem Zimmer hat eine direkte Auswirkung auf deine Stimme. Passe daher über die Helligkeit und Lichttemperatur deine Beleuchtung so an, dass sie dich positiv stimmt.</string>
+
+    <!-- Settings Activity strings -->
+    <string name="settingsActivity_generalSettings" translatable="false">Allgemeine Einstellungen:</string>
+    <string name="settingsActivity_pushNotifications" translatable="false">Push Benachrichtungen</string>
+    <string name="settingsActivity_autoPlay" translatable="false">Automatisch Musik abspielen</string>
+    <string name="settingsActivity_moodQuestionnaireInterval" translatable="false">Intervall Stimmungsabfrage</string>
+    <string name="settingsActivity_moodQuestionnaireIntervalVariable" translatable="false">4 Stunden</string>
+    <string name="settingsActivity_language" translatable="false">Sprache/Language:</string>
+    <string name="settingsActivity_data" translatable="false">Daten:</string>
+    <string name="settingsActivity_dataExplanation" translatable="false">Die gesammelten Daten werden auf deinem Handy lokal gespeichert.</string>
+    <string name="settingsActivity_deleteDataExplanation" translatable="false">Hier kannst du deinen Account und alle deine Daten löschen. Du kannst dann keine vergangenen Visualisierungen mer einsehen.</string>
+    <string name="settingsActivity_deleteData" translatable="false">Daten löschen</string>
+    <string name="settingsActivity_langDe" translatable="false">Deutsch</string>
+    <string name="settingsActivity_langEn" translatable="false">Englisch</string>
+
+    <!-- Main Activity strings -->
+    <string name="mainActivity_welcomeBack" translatable="false">Willkommen zurück!</string>
+    <string name="mainActivity_generalState" translatable="false">Gesamtzustand:</string>
+    <string name="mainActivity_roomTemperature" translatable="false">Aktuelle Raumtemperatur:</string>
+    <string name="mainActivity_airQuality" translatable="false">Aktuelle Luftqualität:</string>
+    <string name="mainActivity_airQualityVariable" translatable="false">85%</string>
+    <string name="mainActivity_roomTemperatureValue" translatable="false">18°C</string>
+
+    <!-- Main Activity strings -->
+    <string name="loginActivity_welcome" translatable="false">Willkommen bei <i>DepressionsApp</i></string>
+    <string name="loginActivity_username" translatable="false">Username:</string>
+    <string name="loginActivity_password" translatable="false">Passwort:</string>
+    <string name="loginActivity_login" translatable="false">Login</string>
+
+    <!-- Mood Activity strings -->
+    <string name="moodActivity_please_select_from_spinners" translatable="false">Bitte wählen Sie Antworten für alle 5 Fragen</string>
+    <string name="moodActivity_please_select" translatable="false">Bitte auswählen</string>
+    <string name="moodActivity_pleaseChoose" translatable="false">Bitte wählen Sie ohne Nachzudenken jeweils eines der neun gezeigten Bilder aus:</string>
+    <string name="moodActivity_1of2" translatable="false">1/2</string>
+    <string name="moodActivity_2of2" translatable="false">2/2</string>
+    <string name="moodActivity_question5" translatable="false">Mein Alltag ist voller Dinge, die mich interessieren</string>
+    <string name="moodActivity_question4" translatable="false">Beim Aufwachen habe ich mich frisch und ausgeruht gefühlt</string>
+    <string name="moodActivity_question3" translatable="false">Gerade fühle ich mich energetisch und aktiv</string>
+    <string name="moodActivity_question2" translatable="false">Gerade fühle ich mich ruhig und entspannt</string>
+    <string name="moodActivity_question1" translatable="false">Gerade bin ich froh und guter Laune</string>
+    <string name="moodActivity_toastNoInput" translatable="false">Bitte beantworte alle 5 Fragen!</string>
+    <string name="moodActivity_toastSuccess" translatable="false">Deine Eingaben wurden in der Datenbank gesichert. Danke für das Eingeben deiner Stimmung</string>
+    <string name="moodActivity_buttonSend" translatable="false">Abschicken</string>
+</resources>
