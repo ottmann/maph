@@ -233,9 +233,8 @@ public class HueActivity extends AppCompatActivity {
             if (phHueSDK.isHeartbeatEnabled(bridge)) {
                 phHueSDK.disableHeartbeat(bridge);
             }
-
             phHueSDK.disconnect(bridge);
-            super.onDestroy();
         }
+        super.onDestroy();
     }
 }
