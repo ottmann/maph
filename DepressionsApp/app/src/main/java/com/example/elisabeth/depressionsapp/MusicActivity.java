@@ -22,13 +22,15 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-public class MusicActivity extends Activity {
+public class MusicActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
     }
+
+    //TODO: BLUETOOTH
     /*protected static final String TAG = "ZS-A2dp";
 
     Button mBtPlay;

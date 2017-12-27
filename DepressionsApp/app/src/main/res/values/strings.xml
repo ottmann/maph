@@ -20,13 +20,8 @@
     <!-- Alarm Activity strings -->
     <string name="button_setAlarm">Alarm einstellen</string>
 
-    <!-- Hue Activity strings -->
-    <string name="hueActivity_brightness">Helligkeit</string>
-    <string name="hueActivity_lightTemperature">Lichttemperatur (weiß nach rot)</string>
-    <string name="hueActivity_lampSwichtedOn">Ist deine Lampe eingeschaltet?</string>
-    <string name="hueActivity_lightExplanation">Die Beleuchtung in deinem Zimmer hat eine direkte Auswirkung auf deine Stimme. Passe daher über die Helligkeit und Lichttemperatur deine Beleuchtung so an, dass sie dich positiv stimmt.</string>
-
     <!-- Settings Activity strings -->
+    <string name="settingsActivity_name">Einstellungen</string>
     <string name="settingsActivity_generalSettings">Allgemeine Einstellungen:</string>
     <string name="settingsActivity_pushNotifications">Push Benachrichtungen</string>
     <string name="settingsActivity_autoPlay">Automatisch Musik abspielen</string>
@@ -55,6 +50,7 @@
     <string name="loginActivity_login">Login</string>
 
     <!-- Mood Activity strings -->
+    <string name="moodActivity_name">Stimmung dokumentieren</string>
     <string name="moodActivity_please_select_from_spinners">Bitte wählen Sie Antworten für alle 5 Fragen</string>
     <string name="moodActivity_please_select">Bitte auswählen</string>
     <string name="moodActivity_pleaseChoose">Bitte wählen Sie ohne Nachzudenken jeweils eines der neun gezeigten Bilder aus:</string>
@@ -69,5 +65,40 @@
     <string name="moodActivity_toastSuccess">Deine Eingaben wurden in der Datenbank gesichert. Danke für das Eingeben deiner Stimmung</string>
     <string name="moodActivity_buttonSend">Abschicken</string>
 
+    <!-- Alarmclock Activity strings -->
+    <string name="alarmclockActivity_name">Schlafphasenwecker</string>
+    <string name="alarmclockActivity_alarmclockExplanation"><![CDATA[Um tagsüber wach und ausgeruht zu sein ist guter Schlaf wichtig. Wenn dein Wecker mitten in einer Tiefschlafphase klingelt, fällt dir das Aufstehen und wach bleiben schwer. \n Dieser Seite erklärt dir, wann du aufstehen solltest, um in einer Leichtschlafphase geweckt zu werden. ]]></string>
+
+    <!-- Visualisations Activity strings -->
+    <string name="visualisationsActivity_name">Visualisierungen</string>
+
+    <!-- Music Activity strings -->
+    <string name="musicActivity_name">Musik</string>
+
+    <!-- Samsung Gear Activity strings -->
+    <string name="watchActivity_name">Samsung Gear</string>
+
+    <!-- Alexa Activity strings -->
+    <string name="alexaActivity_name">Amazon Alexa</string>
+
+    <!-- Hue Activity strings -->
+    <string name="hueActivity_name">Philips Hue</string>
+    <string name="hueActivity_brightness">Helligkeit</string>
+    <string name="hueActivity_lightTemperature">Lichttemperatur (weiß nach rot)</string>
+    <string name="hueActivity_lampSwichtedOn">Ist deine Lampe eingeschaltet?</string>
+    <string name="hueActivity_lightExplanation">Die Beleuchtung in deinem Zimmer hat eine direkte Auswirkung auf deine Stimmung. Passe daher über die Helligkeit und Lichttemperatur deine Beleuchtung so an, dass sie dich positiv stimmt.</string>
+
+    <!-- Arduino Activity strings -->
+    <string name="sensorActivity_name">Arduino Sensorboard</string>
+
+    <!-- Alarmclock Activity strings -->
+    <string name="alarmclockActivity_sleepTimeExplanation">Ein Erwachsener sollte 4-6 Schlafzyklen á 90 Minuten pro Nacht durchlaufen. Basierend auf deinen Eingaben solltest du deswegen um</string>
+    <string name="alarmclockActivity_or">oder</string>
+    <string name="alarmclockActivity_bedTimeQuestion">Wann möchtest du ins Bett gehen?</string>
+    <string name="alarmclockActivity_bedtimeButton">Uhrzeit eingeben</string>
+    <string name="alarmclockActivity_fallingAsleepTime">Wie lange brauchst du etwa zum Einschlafen?</string>
+    <string name="alarmclockActivity_minutes">Minuten</string>
+    <string name="alarmclockActivity_pleaseEnterData">Bitte Daten eingeben</string>
+    <string name="alarmclockActivity_getup">aufstehen.</string>
 
 </resources>

@@ -1,74 +1,92 @@
 <resources>
-    <string name="app_name" translatable="false">Anti depression app</string>
+    <string name="app_name">Anti depression app</string>
 
     <!-- Drawer Menu strings -->
-    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
-    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="action_settings" translatable="false">Settings</string>
-    <string name="connected_devices" translatable="false">Connected devices</string>
-    <string name="device_alexa" translatable="false">Amazon Alexa</string>
-    <string name="device_hue" translatable="false">Phillips Hue</string>
-    <string name="device_arduino" translatable="false">Arduino Sensorboard</string>
-    <string name="device_watch" translatable="false">Samsung Gear</string>
-    <string name="nav_item_mood" translatable="false">Document mood</string>
-    <string name="nav_item_visualisation" translatable="false">Visualisations</string>
-    <string name="nav_item_settings" translatable="false">Settings</string>
-    <string name="nav_item_alarmclock" translatable="false">Sleep phases alarm</string>
-    <string name="nav_item_music" translatable="false">Music</string>
-    <string name="title_activity_settings" translatable="false">Settings</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings" translatable="true">Settings</string>
+    <string name="connected_devices" translatable="true">Connected devices</string>
+    <string name="device_alexa" translatable="true">Amazon Alexa</string>
+    <string name="device_hue" translatable="true">Phillips Hue</string>
+    <string name="device_arduino" translatable="true">Arduino Sensorboard</string>
+    <string name="device_watch" translatable="true">Samsung Gear</string>
+    <string name="nav_item_mood" translatable="true">Document mood</string>
+    <string name="nav_item_visualisation" translatable="true">Visualisations</string>
+    <string name="nav_item_settings" translatable="true">Settings</string>
+    <string name="nav_item_alarmclock" translatable="true">Sleep phases alarm</string>
+    <string name="nav_item_music" translatable="true">Music</string>
+    <string name="title_activity_settings" translatable="true">Settings</string>
 
     <!-- Alarm Activity strings -->
-    <string name="button_setAlarm" translatable="false">Set alarm</string>
+    <string name="button_setAlarm" translatable="true">Set alarm</string>
 
     <!-- Hue Activity strings -->
-    <string name="hueActivity_brightness" translatable="false">Brightness</string>
-    <string name="hueActivity_lightTemperature" translatable="false">Lightemperature (white to red)</string>
-    <string name="hueActivity_lampSwichtedOn" translatable="false">Is your lamp switched on?</string>
-    <string name="hueActivity_lightExplanation" translatable="false">The lighting in your room directly affects your mood. Adjust the brightness and temperature of the lighting in your room to brighten your mood. </string>
+    <string name="hueActivity_brightness" translatable="true">Brightness</string>
+    <string name="hueActivity_lightTemperature" translatable="true">Lightemperature (white to red)</string>
+    <string name="hueActivity_lampSwichtedOn" translatable="true">Is your lamp switched on?</string>
+    <string name="hueActivity_lightExplanation" translatable="true">The lighting in your room directly affects your mood. Adjust the brightness and temperature of the lighting in your room to brighten your mood. </string>
 
     <!-- Settings Activity strings -->
-    <string name="settingsActivity_generalSettings" translatable="false">General Settings:</string>
-    <string name="settingsActivity_pushNotifications" translatable="false">Push Notifcations</string>
-    <string name="settingsActivity_autoPlay" translatable="false">Automatically play music</string>
-    <string name="settingsActivity_moodQuestionnaireInterval" translatable="false">Mood questionnaire interval</string>
-    <string name="settingsActivity_moodQuestionnaireIntervalVariable" translatable="false">4 hours</string>
-    <string name="settingsActivity_language" translatable="false">Sprache/Language:</string>
-    <string name="settingsActivity_data" translatable="false">Data:</string>
-    <string name="settingsActivity_langDe" translatable="false">German</string>
-    <string name="settingsActivity_langEn" translatable="false">English</string>
-    <string name="settingsActivity_dataExplanation" translatable="false">All of our data is saved on your phone locally.</string>
-    <string name="settingsActivity_deleteDataExplanation" translatable="false">This button allows you to delete your account and all of your data. This means you can no longer view visualisations of past data. This step cannot be undone.</string>
-    <string name="settingsActivity_deleteData" translatable="false">Delete data</string>
+    <string name="settingsActivity_generalSettings" translatable="true">General Settings:</string>
+    <string name="settingsActivity_pushNotifications" translatable="true">Push Notifcations</string>
+    <string name="settingsActivity_autoPlay" translatable="true">Automatically play music</string>
+    <string name="settingsActivity_moodQuestionnaireInterval" translatable="true">Mood questionnaire interval</string>
+    <string name="settingsActivity_moodQuestionnaireIntervalVariable" translatable="true">4 hours</string>
+    <string name="settingsActivity_language" translatable="true">Sprache/Language:</string>
+    <string name="settingsActivity_data" translatable="true">Data:</string>
+    <string name="settingsActivity_langDe" translatable="true">German</string>
+    <string name="settingsActivity_langEn" translatable="true">English</string>
+    <string name="settingsActivity_dataExplanation" translatable="true">All of our data is saved on your phone locally.</string>
+    <string name="settingsActivity_deleteDataExplanation" translatable="true">This button allows you to delete your account and all of your data. This means you can no longer view visualisations of past data. This step cannot be undone.</string>
+    <string name="settingsActivity_deleteData" translatable="true">Delete data</string>
 
 
     <!-- Main Activity strings -->
-    <string name="mainActivity_welcomeBack" translatable="false">Welcome back!</string>
-    <string name="mainActivity_generalState" translatable="false">General state:</string>
-    <string name="mainActivity_roomTemperature" translatable="false">Current roomtemperature:</string>
-    <string name="mainActivity_airQuality" translatable="false">Current air quality:</string>
-    <string name="mainActivity_airQualityVariable" translatable="false">85%</string>
-    <string name="mainActivity_roomTemperatureValue" translatable="false">18°C</string>
+    <string name="mainActivity_welcomeBack" translatable="true">Welcome back!</string>
+    <string name="mainActivity_generalState" translatable="true">General state:</string>
+    <string name="mainActivity_roomTemperature" translatable="true">Current roomtemperature:</string>
+    <string name="mainActivity_airQuality" translatable="true">Current air quality:</string>
+    <string name="mainActivity_airQualityVariable" translatable="true">85%</string>
+    <string name="mainActivity_roomTemperatureValue" translatable="true">18°C</string>
 
     <!-- Main Activity strings -->
-    <string name="loginActivity_welcome" translatable="false">Welcome to our <i>Anti Depression App</i></string>
-    <string name="loginActivity_username" translatable="false">Username:</string>
-    <string name="loginActivity_password" translatable="false">Password:</string>
-    <string name="loginActivity_login" translatable="false">Login</string>
+    <string name="loginActivity_welcome" translatable="true">Welcome to our <i>Anti Depression App</i></string>
+    <string name="loginActivity_username" translatable="true">Username:</string>
+    <string name="loginActivity_password" translatable="true">Password:</string>
+    <string name="loginActivity_login" translatable="true">Login</string>
 
     <!-- Mood Activity strings -->
-    <string name="moodActivity_please_select_from_spinners" translatable="false">Please choose answers for all 5 questions</string>
-    <string name="moodActivity_please_select" translatable="false">Please select</string>
-    <string name="moodActivity_pleaseChoose" translatable="false">Please select whichever of the pictures matches your current mood best:</string>
-    <string name="moodActivity_1of2" translatable="false">1/2</string>
-    <string name="moodActivity_2of2" translatable="false">2/2</string>
-    <string name="moodActivity_question5" translatable="false">Mein Alltag ist voller Dinge, die mich interessieren</string>
-    <string name="moodActivity_question4" translatable="false">Beim Aufwachen habe ich mich frisch und ausgeruht gefühlt</string>
-    <string name="moodActivity_question3" translatable="false">Gerade fühle ich mich energetisch und aktiv</string>
-    <string name="moodActivity_question2" translatable="false">Gerade fühle ich mich ruhig und entspannt</string>
-    <string name="moodActivity_question1" translatable="false">Gerade bin ich froh und guter Laune</string>
-    <string name="moodActivity_toastNoInput" translatable="false">Please answer all of the 5 questions!</string>
-    <string name="moodActivity_toastSuccess" translatable="false">Your data has been saved to the database. Thank you for recording your mood.</string>
-    <string name="moodActivity_buttonSend" translatable="false">Submit</string>
+    <string name="moodActivity_please_select_from_spinners" translatable="true">Please choose answers for all 5 questions</string>
+    <string name="moodActivity_please_select" translatable="true">Please select</string>
+    <string name="moodActivity_pleaseChoose" translatable="true">Please select whichever of the pictures matches your current mood best:</string>
+    <string name="moodActivity_1of2" translatable="true">1/2</string>
+    <string name="moodActivity_2of2" translatable="true">2/2</string>
+    <string name="moodActivity_question5" translatable="true">Mein Alltag ist voller Dinge, die mich interessieren</string>
+    <string name="moodActivity_question4" translatable="true">Beim Aufwachen habe ich mich frisch und ausgeruht gefühlt</string>
+    <string name="moodActivity_question3" translatable="true">Gerade fühle ich mich energetisch und aktiv</string>
+    <string name="moodActivity_question2" translatable="true">Gerade fühle ich mich ruhig und entspannt</string>
+    <string name="moodActivity_question1" translatable="true">Gerade bin ich froh und guter Laune</string>
+    <string name="moodActivity_toastNoInput" translatable="true">Please answer all of the 5 questions!</string>
+    <string name="moodActivity_toastSuccess" translatable="true">Your data has been saved to the database. Thank you for recording your mood.</string>
+    <string name="moodActivity_buttonSend" translatable="true">Submit</string>
+    <string name="settingsActivity_name">Settings</string>
+    <string name="alarmclockActivity_name">Sleep Phases AlarmClock</string>
+    <string name="hueActivity_name">Philips Hue</string>
+    <string name="moodActivity_name">Document your mood</string>
+    <string name="visualisationsActivity_name">Visualisations</string>
+    <string name="watchActivity_name">Samsung Gear</string>
+    <string name="sensorActivity_name">Arduino Sensorboard</string>
+    <string name="alexaActivity_name">Amazon Alexa</string>
+    <string name="musicActivity_name">Music</string>
+    <string name="alarmclockActivity_alarmclockExplanation"><![CDATA[Good sleep is important in order to feel awake and refreshed during your day. If your alarm wakes you during a deep sleep phase, you are going to feel tired all day. \n This page shows you when you should set your alarm in order to be woken during a lighter sleeping phase. ]]></string>
+    <string name="alarmclockActivity_sleepTimeExplanation">An adult should experience 4-6 sleep cycles with 90 minutes each every night. Based on your previous input you should get up at</string>
+    <string name="alarmclockActivity_or">or</string>
+    <string name="alarmclockActivity_bedTimeQuestion">When would you like to go to bed?</string>
+    <string name="alarmclockActivity_bedtimeButton">Enter a time</string>
+    <string name="alarmclockActivity_fallingAsleepTime">How much time do you need to fall asleep?</string>
+    <string name="alarmclockActivity_getup">o\'clock.</string>
+    <string name="alarmclockActivity_minutes">Minutes</string>
+    <string name="alarmclockActivity_pleaseEnterData">Please set a time </string>
 
 
 </resources>

@@ -26,29 +26,36 @@
 
         <activity
             android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:label="@string/settingsActivity_name"/>
 
         <activity
             android:name=".MoodActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:label="@string/moodActivity_name"/>
 
         <activity
             android:name=".VisualisationsActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:label="@string/visualisationsActivity_name"/>
 
         <activity
             android:name=".AlarmclockActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:label="@string/alarmclockActivity_name"/>
 
         <activity
             android:name=".MusicActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:label="@string/musicActivity_name"/>
 
         <receiver
             android:name=".services.AlarmReceiver"
             android:parentActivityName=".MainActivity" />
 
-        <activity android:name=".QuestionsActivity" />
+        <activity
+            android:name=".QuestionsActivity"
+            android:label="@string/moodActivity_name"/>
 
         <activity
             android:name=".LoginActivity"
@@ -64,16 +71,20 @@
         <!-- devices -->
         <activity
             android:name=".devices.WatchActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:label="@string/watchActivity_name"/>
         <activity
             android:name=".devices.ArduinoActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:label="@string/sensorActivity_name"/>
         <activity
             android:name=".devices.HueActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:label="@string/hueActivity_name"/>
         <activity
             android:name=".devices.AlexaActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:label="@string/alexaActivity_name"/>
 
     </application>
 

@@ -14,6 +14,8 @@ import java.util.Locale;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    boolean first;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,36 +25,42 @@ public class SettingsActivity extends AppCompatActivity {
         RadioButton langDe = (RadioButton) findViewById(R.id.radioButtonDe);
         RadioButton langEn = (RadioButton) findViewById(R.id.radioButtonEn);
 
-        //setLocale("en");
+        first = true;
 
-        /*langGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        langGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged (RadioGroup group,int checkedId){
 
                 Log.d("selected language", "id" + checkedId);
 
-                if (checkedId == R.id.radioButtonDe) {
-                    Log.d("Checked: ", "DE");
-                    setLocale("de");
-                    langGroup.check(R.id.radioButtonDe);
-                } else if (checkedId == R.id.radioButtonEn) {
-                    Log.d("Checked: ", "EN");
-                    setLocale("en");
-                    langGroup.check(R.id.radioButtonEn);
+                if (first) {
+                    if (checkedId == R.id.radioButtonDe) {
+                        Log.d("Checked: ", "DE");
+                        setLocale("de");
+                        langGroup.check(R.id.radioButtonDe);
+                    } else if (checkedId == R.id.radioButtonEn) {
+                        Log.d("Checked: ", "EN");
+                        setLocale("en");
+                        langGroup.check(R.id.radioButtonEn);
+                    }
                 }
+
             }
-        });*/
+        });
 
-        Locale lang = getLocale();
-        Log.d("LOCALE: ", lang.toString());
-
-        langGroup.clearCheck();
-        if (lang.equals("de_DE")) {
+        //TODO: https://stackoverflow.com/questions/20343220/how-to-change-the-language-of-android-app-from-within
+        /*//langGroup.clearCheck();
+        Locale current = getResources().getConfiguration().locale;
+        if (current.equals(Locale.ENGLISH)) {
+            Log.d("DEFAULT: ", "GERMAN");
             langGroup.check(R.id.radioButtonDe);
-        } else if (lang.equals("en_EN")) {
+            first = true;
+        } else {
+            Log.d("DEFAULT: ", "ENGLISH");
             langGroup.check(R.id.radioButtonEn);
-        }
+            first = true;
+        }*/
     }
 
 
