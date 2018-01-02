@@ -100,5 +100,14 @@
     <string name="alarmclockActivity_minutes">Minuten</string>
     <string name="alarmclockActivity_pleaseEnterData">Bitte Daten eingeben</string>
     <string name="alarmclockActivity_getup">aufstehen.</string>
+    <string name="mainActivity_graphExplanation">Hier siehst du deine Stimmung im zeitlichen Verlauf</string>
+    <string name="visualisationsActivity_title">Visualisierungen</string>
+    <string name="visualisationsActivity_explanation">Hier kannst du dir Visualisierungen deiner aufgezeichneten Daten ansehen</string>
+    <string name="visualisationsActivity_mood">Stimmung</string>
+    <string name="visualisationsActivity_moodExplanation">Hier siehst du deine Stimmung, die du entweder mit deiner Alexa oder dieser App dokumentieren kannst</string>
+    <string name="visualisationsActivity_sleepExplanation">Hier kannst du sehen wie viel Schlaf du pro Nacht bekommen hast</string>
+    <string name="visualisationsActivity_sleep">Schlaf</string>
+    <string name="visualisationsActivity_moodLegend">Stimmung</string>
+    <string name="visualisationsActivity_sleepLegend">Stunden Schlaf</string>
 
 </resources>

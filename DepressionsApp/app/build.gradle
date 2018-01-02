@@ -27,6 +27,7 @@ dependencies {
     compile 'com.android.support:design:24.2.1'
     compile 'com.jjoe64:graphview:4.2.1'
     compile 'com.github.sujithkanna:smileyrating:1.6.8'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 //    implementation files('libs/huelocalsdk.jar')
 //    implementation files('libs/huesdkresources.jar')
     //compile 'com.android.support.constraint:constraint-layout:1.0.2'

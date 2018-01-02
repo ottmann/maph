@@ -12,12 +12,96 @@
     tools:context="com.example.elisabeth.depressionsapp.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <com.jjoe64.graphview.GraphView
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        android:id="@+id/graph"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/mainActivity_welcomeBack"
+        android:id="@+id/textView2"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="0dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/mainActivity_graphExplanation"
         android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/textView52" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/imageView3"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/smiley1" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/imageView4"
+                android:layout_marginTop="27dp"
+                android:src="@drawable/smiley2"
+                android:layout_marginLeft="0dp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/imageView5"
+                android:layout_marginTop="27dp"
+                android:src="@drawable/smiley3" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/imageView6"
+                android:layout_marginTop="27dp"
+                android:src="@drawable/smiley4"
+                android:layout_marginLeft="0dp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/imageView7"
+                android:layout_marginTop="27dp"
+                android:src="@drawable/smiley5" />
+
+        </LinearLayout>
+
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="wrap_content"
+            android:layout_height="200dip"
+            android:id="@+id/graph"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="90dp" />
+
+    </LinearLayout>
+
+    <!--<com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+    <!--<com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart_line"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="80dp" />-->
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -31,20 +115,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/mainActivity_welcomeBack"
-        android:id="@+id/textView2"
-        android:layout_marginTop="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="10dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/mainActivity_generalState"
         android:id="@+id/textView3"
-        android:layout_above="@+id/ratingBar"
+        android:layout_below="@+id/ratingBar"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -53,10 +126,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/mainActivity_roomTemperature"
         android:id="@+id/textView6"
-        android:layout_below="@+id/graph"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -87,6 +87,15 @@
     <string name="alarmclockActivity_getup">o\'clock.</string>
     <string name="alarmclockActivity_minutes">Minutes</string>
     <string name="alarmclockActivity_pleaseEnterData">Please set a time </string>
+    <string name="mainActivity_graphExplanation">Here you can see your mood develop over time</string>
+    <string name="visualisationsActivity_explanation">Here you can view your recorded data</string>
+    <string name="visualisationsActivity_mood">Mood</string>
+    <string name="visualisationsActivity_moodExplanation">Here you can see your mood, recorded with either Alexa or the App</string>
+    <string name="visualisationsActivity_sleep">Sleep</string>
+    <string name="visualisationsActivity_sleepExplanation">Here you can see how many hours of sleep you got each night</string>
+    <string name="visualisationsActivity_title">Visualisations</string>
+    <string name="visualisationsActivity_moodLegend">Mood</string>
+    <string name="visualisationsActivity_sleepLegend">Hours of sleep</string>
 
 
 </resources>

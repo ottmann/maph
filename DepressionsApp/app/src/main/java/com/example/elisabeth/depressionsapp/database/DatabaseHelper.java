@@ -16,9 +16,14 @@ import java.util.HashMap;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "DepressionsApp.db";
+
     public static final String USER_TABLE_NAME = "User";
     public static final String USER_COLUMN_NAME = "Name";
     public static final String MOOD_TABLE_NAME = "Mood";
+    public static final String ARDUINO_TABLE_NAME = "Arduino";
+    public static final String WATCH_TABLE_NAME = "Watch";
+
+
     public static final String MOOD_COLUMN_USER = "UserId";
     public static final String MOOD_COLUMN_TIMESTAMP = "Timestamp";
     public static final String MOOD_COLUMN_SCORE = "Score";
