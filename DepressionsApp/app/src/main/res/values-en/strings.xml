@@ -7,9 +7,9 @@
     <string name="action_settings" translatable="true">Settings</string>
     <string name="connected_devices" translatable="true">Connected devices</string>
     <string name="device_alexa" translatable="true">Amazon Alexa</string>
-    <string name="device_hue" translatable="true">Phillips Hue</string>
-    <string name="device_arduino" translatable="true">Arduino Sensorboard</string>
-    <string name="device_watch" translatable="true">Samsung Gear</string>
+    <string name="device_hue" translatable="true">Mood Light</string>
+    <string name="device_arduino" translatable="true">Sensor board</string>
+    <string name="device_watch" translatable="true">Fitness Tracker</string>
     <string name="nav_item_mood" translatable="true">Document mood</string>
     <string name="nav_item_visualisation" translatable="true">Visualisations</string>
     <string name="nav_item_settings" translatable="true">Settings</string>
@@ -96,6 +96,8 @@
     <string name="visualisationsActivity_title">Visualisations</string>
     <string name="visualisationsActivity_moodLegend">Mood</string>
     <string name="visualisationsActivity_sleepLegend">Hours of sleep</string>
+    <string name="visualisationsActivity_data">Data</string>
+    <string name="visualisationsActivity_results">Results</string>
 
 
 </resources>

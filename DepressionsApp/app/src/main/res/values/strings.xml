@@ -6,10 +6,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
     <string name="connected_devices">Verbundene Geräte</string>
-    <string name="device_alexa">Amazon Alexa</string>
-    <string name="device_hue">Phillips Hue</string>
-    <string name="device_arduino">Arduino Sensorboard</string>
-    <string name="device_watch">Samsung Gear</string>
+    <string name="device_hue">Stimmungsleuchte</string>
+    <string name="device_arduino">Sensorboard</string>
     <string name="nav_item_mood">Stimmung dokumentieren</string>
     <string name="nav_item_visualisation">Visualisierungen</string>
     <string name="nav_item_settings">Einstellungen</string>
@@ -109,5 +107,12 @@
     <string name="visualisationsActivity_sleep">Schlaf</string>
     <string name="visualisationsActivity_moodLegend">Stimmung</string>
     <string name="visualisationsActivity_sleepLegend">Stunden Schlaf</string>
+    <string name="device_alexa">Sprachsteuerung</string>
+    <string name="device_watch">Fitness Tracker</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="visualisationsActivity_results">Ergebnisse</string>
+    <string name="visualisationsActivity_data">Daten</string>
 
 </resources>
