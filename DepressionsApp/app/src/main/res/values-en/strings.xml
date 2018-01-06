@@ -55,7 +55,7 @@
     <string name="loginActivity_password" translatable="true">Password:</string>
     <string name="loginActivity_login" translatable="true">Login</string>
 
-    <!-- Mood Activity strings -->
+    <!-- MoodEntry Activity strings -->
     <string name="moodActivity_please_select_from_spinners" translatable="true">Please choose answers for all 5 questions</string>
     <string name="moodActivity_please_select" translatable="true">Please select</string>
     <string name="moodActivity_pleaseChoose" translatable="true">Please select whichever of the pictures matches your current mood best:</string>

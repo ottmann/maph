@@ -47,7 +47,7 @@
     <string name="loginActivity_password">Passwort:</string>
     <string name="loginActivity_login">Login</string>
 
-    <!-- Mood Activity strings -->
+    <!-- MoodEntry Activity strings -->
     <string name="moodActivity_name">Stimmung dokumentieren</string>
     <string name="moodActivity_please_select_from_spinners">Bitte wählen Sie Antworten für alle 5 Fragen</string>
     <string name="moodActivity_please_select">Bitte auswählen</string>

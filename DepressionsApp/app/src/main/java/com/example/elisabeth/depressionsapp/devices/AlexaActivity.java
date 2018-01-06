@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.elisabeth.depressionsapp.R;
-import com.example.elisabeth.depressionsapp.model.DeviceItem;
+import com.example.elisabeth.depressionsapp.datamodel.DeviceItem;
 
 import java.util.ArrayList;
 import java.util.Set;

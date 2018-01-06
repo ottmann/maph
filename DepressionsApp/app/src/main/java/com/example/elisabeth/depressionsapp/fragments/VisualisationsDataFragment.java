@@ -19,7 +19,6 @@ import java.util.Date;
 
 import com.example.elisabeth.depressionsapp.R;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the

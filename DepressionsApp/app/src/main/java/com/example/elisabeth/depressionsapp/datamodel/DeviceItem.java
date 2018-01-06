@@ -1,4 +1,4 @@
-package com.example.elisabeth.depressionsapp.model;
+package com.example.elisabeth.depressionsapp.datamodel;
 
 /**
  * Created by elisabeth on 17.12.17.

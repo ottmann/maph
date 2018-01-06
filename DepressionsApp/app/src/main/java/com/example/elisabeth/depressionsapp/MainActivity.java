@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.RatingBar;
 
+import com.example.elisabeth.depressionsapp.database.DatabaseManager;
+import com.example.elisabeth.depressionsapp.datamodel.MoodEntry;
 import com.example.elisabeth.depressionsapp.devices.AlexaActivity;
 import com.example.elisabeth.depressionsapp.devices.ArduinoActivity;
 import com.example.elisabeth.depressionsapp.devices.HueActivity;
@@ -25,6 +27,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        DatabaseManager.systemSync(getApplicationContext());
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -48,15 +53,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         String wifi = WifiConnectionManager.getCurrentSsid(getApplicationContext());
         System.out.println("WIFI: " + wifi);
-        System.out.println("WIFI: " + wifi);
-        System.out.println("WIFI: " + wifi);
-        System.out.println("WIFI: " + wifi);
-        System.out.println("WIFI: " + wifi);
-        
+
         //Set our home wifi as eduroam/uni network
         if (wifi.equals("eduroam")) {
             IS_CONNECTED_TO_HOME_WIFI = true;
         }
+
+        List<MoodEntry> moodList = DatabaseManager.getAllMoods();
+        System.out.println("MOODLIST: " + moodList);
 
         fillGraphView();
 

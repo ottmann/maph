@@ -18,13 +18,6 @@ import java.util.List;
  * Created by elisabeth on 04.12.17.
  */
 public class WifiConnectionManager extends AppCompatActivity {
-    private WifiManager mainWifi;
-    //mainWifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-    private  String ssid;
-
-    public WifiConnectionManager() {
-
-    }
 
     public static String getCurrentSsid(Context context) {
         String ssid = null;
@@ -42,14 +35,6 @@ public class WifiConnectionManager extends AppCompatActivity {
             }
         }
 
-        return ssid;
-    }
-
-    private void setSsid(String newSsid) {
-        ssid = newSsid;
-    }
-
-    private String getSsid() {
         return ssid;
     }
 }

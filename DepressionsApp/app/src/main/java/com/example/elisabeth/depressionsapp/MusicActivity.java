@@ -3,6 +3,8 @@ package com.example.elisabeth.depressionsapp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
 import android.app.ListActivity;
 import android.bluetooth.BluetoothA2dp;
 import android.bluetooth.BluetoothAdapter;
@@ -13,9 +15,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.icu.text.SymbolTable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -30,6 +34,22 @@ import android.widget.Toast;
 import com.example.elisabeth.depressionsapp.services.AudioFileManager;
 
 public class MusicActivity extends AppCompatActivity {
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_music);
+
+        AudioFileManager am = new AudioFileManager();
+        List<HashMap<String,String>> fileList = am.getAllAudioFromDevice(getApplicationContext());
+        System.out.println("List");
+        System.out.println("List");
+        System.out.println("List");
+        System.out.println("Items: " + fileList);
+    }
+
+
 /*    // Songs list
     public ArrayList songsList = new ArrayList();
 
@@ -186,7 +206,8 @@ public class MusicActivity extends AppCompatActivity {
 
     //TODO: BLUETOOTH
     */
-    protected static final String TAG = "ZS-A2dp";
+    //TODO: this is working to play on headset
+/*    protected static final String TAG = "ZS-A2dp";
 
     Button mBtPlay;
 
@@ -315,7 +336,7 @@ public class MusicActivity extends AppCompatActivity {
         mPlayer.start();
 
         StrictMode.setThreadPolicy(old);
-    }
+    }*/
 
 }
 
