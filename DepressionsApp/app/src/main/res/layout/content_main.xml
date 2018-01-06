@@ -34,8 +34,9 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="5dp">
+        android:layout_height="290dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/linearLayoutGraphView">
 
         <LinearLayout
             android:orientation="vertical"
@@ -106,7 +107,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/mainActivity_generalState"
         android:id="@+id/textView3"
-        android:layout_below="@+id/ratingBar"
+        android:layout_above="@+id/ratingBar"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -116,7 +117,9 @@
         android:text="@string/mainActivity_roomTemperature"
         android:id="@+id/textView6"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/linearLayoutGraphView"/>
 
     <TextView
         android:layout_width="wrap_content"

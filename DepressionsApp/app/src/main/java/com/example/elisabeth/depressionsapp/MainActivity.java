@@ -17,6 +17,7 @@ import com.example.elisabeth.depressionsapp.devices.ArduinoActivity;
 import com.example.elisabeth.depressionsapp.devices.HueActivity;
 import com.example.elisabeth.depressionsapp.devices.WatchActivity;
 
+import com.example.elisabeth.depressionsapp.services.WifiConnectionManager;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
@@ -26,6 +27,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    public boolean IS_CONNECTED_TO_HOME_WIFI = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(MainActivity.this);
+
+        String wifi = WifiConnectionManager.getCurrentSsid(getApplicationContext());
+        System.out.println("WIFI: " + wifi);
+        System.out.println("WIFI: " + wifi);
+        System.out.println("WIFI: " + wifi);
+        System.out.println("WIFI: " + wifi);
+        System.out.println("WIFI: " + wifi);
+        
+        //Set our home wifi as eduroam/uni network
+        if (wifi.equals("eduroam")) {
+            IS_CONNECTED_TO_HOME_WIFI = true;
+        }
 
         fillGraphView();
 
