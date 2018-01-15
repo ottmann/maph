@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.elisabeth.depressionsapp.AlarmclockActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/alarmclockActivity_name"
+        android:id="@+id/textView43"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/alarmclockActivity_alarmclockExplanation"
+        android:id="@+id/textView44"
+        android:layout_below="@+id/textView43"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/alarmclockActivity_bedTimeQuestion"
+        android:id="@+id/textView45"
+        android:layout_below="@+id/textView44"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alarmclockActivity_bedtimeButton"
+        android:id="@+id/buttonSetAlarmTime"
+        android:layout_alignEnd="@+id/textView45"
+        android:layout_below="@+id/textView45" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/alarmclockActivity_fallingAsleepTime"
+        android:id="@+id/textView46"
+        android:layout_below="@+id/buttonSetAlarmTime"
+        android:layout_marginTop="5dp"
+        android:layout_alignStart="@+id/textView45" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/textView46"
+        android:layout_alignStart="@+id/textView46"
+        android:text="15" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/alarmclockActivity_minutes"
+        android:id="@+id/textView47"
+        android:layout_alignBottom="@+id/editText3"
+        android:layout_alignStart="@+id/buttonSetAlarmTime"
+        android:paddingBottom="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/alarmclockActivity_sleepTimeExplanation"
+        android:id="@+id/textView48"
+        android:layout_below="@+id/editText3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="19:32"
+        android:id="@+id/textView50"
+        android:layout_above="@+id/textView46"
+        android:layout_alignStart="@+id/textView46"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/alarmclockActivity_pleaseEnterData"
+        android:id="@+id/textView49"
+        android:layout_below="@+id/textView48"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/alarmclockActivity_getup"
+        android:id="@+id/textView51"
+        android:layout_below="@+id/textView49"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
