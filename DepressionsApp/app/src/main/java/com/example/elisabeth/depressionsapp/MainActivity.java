@@ -54,9 +54,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String wifi = WifiConnectionManager.getCurrentSsid(getApplicationContext());
         System.out.println("WIFI: " + wifi);
 
-        //Set our home wifi as eduroam/uni network
-        if (wifi.equals("eduroam")) {
-            IS_CONNECTED_TO_HOME_WIFI = true;
+        if (wifi != null) {
+            //Set our home wifi as eduroam/uni network
+            if (wifi.equals("eduroam")) {
+                IS_CONNECTED_TO_HOME_WIFI = true;
+            }
         }
 
         List<MoodEntry> moodList = DatabaseManager.getAllMoods();
