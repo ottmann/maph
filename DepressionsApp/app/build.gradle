@@ -31,4 +31,14 @@ dependencies {
     compile 'com.jjoe64:graphview:4.2.1'
     compile 'com.github.sujithkanna:smileyrating:1.6.8'
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+    // Dependencies for AWS DynamoDB connection
+    compile 'com.amazonaws:aws-android-sdk-core:2.6.+'
+    compile 'com.amazonaws:aws-android-sdk-s3:2.6.+'
+    compile 'com.amazonaws:aws-android-sdk-ddb:2.6.+'
+    compile 'com.amazonaws:aws-android-sdk-ddb-mapper:2.6.+'
+    compile 'com.amazonaws:aws-android-sdk-mobile-client:2.6.+'
+
+
+
 }

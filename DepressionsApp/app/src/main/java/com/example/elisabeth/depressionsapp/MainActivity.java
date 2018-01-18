@@ -12,6 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.RatingBar;
 
+import com.amazonaws.auth.CognitoCachingCredentialsProvider;
+import com.amazonaws.mobile.client.AWSMobileClient;
+import com.amazonaws.regions.Regions;
 import com.example.elisabeth.depressionsapp.database.DatabaseManager;
 import com.example.elisabeth.depressionsapp.datamodel.MoodEntry;
 import com.example.elisabeth.depressionsapp.devices.AlexaActivity;
@@ -68,6 +71,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         ratingBar.setEnabled(false);
+
+        initializeAwsCredentials();
+    }
+
+    private void initializeAwsCredentials() {
+        CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
+                getApplicationContext(),
+                "us-east-1:827567bb-aa00-4cfe-8bc9-61c06b0fc123", // Identity pool ID
+                Regions.US_EAST_1 // Region
+        );
+        AWSMobileClient.getInstance().setCredentialsProvider(credentialsProvider);
     }
 
     @Override
