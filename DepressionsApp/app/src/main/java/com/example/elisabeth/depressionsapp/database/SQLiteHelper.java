@@ -241,7 +241,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 //s.setId(i);
                 s.setId(Integer.parseInt(cursor.getString(0)));
                 s.setTemperature(Double.parseDouble(cursor.getString(1)));
-                s.setAirquality(Double.parseDouble(cursor.getString(2)));
+                s.setAirquality(Integer.parseInt(cursor.getString(2)));
                 s.setTimestamp(cursor.getString(3));
 
                 sensorEntryList.add(s);
@@ -274,11 +274,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         addMood(m8);
 
 
-        SensorEntry s1 = new SensorEntry(1, 18.0, 85.0, "2018-01-01 10:00:00" );
+        SensorEntry s1 = new SensorEntry(1, 18.0, 1,0, "2018-01-01 10:00:00" );
         addSensorEntry(s1);
-        SensorEntry s2 = new SensorEntry(2, 17.0, 85.0, "2018-01-02 10:00:00" );
+        SensorEntry s2 = new SensorEntry(2, 17.0, 2,100, "2018-01-02 10:00:00" );
         addSensorEntry(s2);
-        SensorEntry s3 = new SensorEntry(3, 21.0, 85.0, "2018-01-03 10:00:00" );
+        SensorEntry s3 = new SensorEntry(3, 21.0, 1,50, "2018-01-03 10:00:00" );
         addSensorEntry(s3);
     }
 }

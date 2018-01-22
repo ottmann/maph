@@ -6,21 +6,24 @@ package com.example.elisabeth.depressionsapp.datamodel;
 public class SensorEntry {
     public int id;
     public double temperature;
-    public double airquality;
+    public int airquality;
+    public int lightvalue;
     public String timestamp;
 
     public SensorEntry() {}
 
-    public SensorEntry (double temperature, double airquality, String timestamp) {
+    public SensorEntry (double temperature, int airquality,int lightvalue, String timestamp) {
         this.temperature = temperature;
         this.airquality = airquality;
+        this.lightvalue=lightvalue;
         this.timestamp = timestamp;
     }
 
-    public SensorEntry (int id, double temperature, double airquality, String timestamp) {
+    public SensorEntry (int id, double temperature, int airquality,int lightvalue, String timestamp) {
         this.id = id;
         this.temperature = temperature;
         this.airquality = airquality;
+        this.lightvalue=lightvalue;
         this.timestamp = timestamp;
     }
 
@@ -40,11 +43,11 @@ public class SensorEntry {
         this.temperature = temperature;
     }
 
-    public double getAirquality() {
+    public int getAirquality() {
         return airquality;
     }
 
-    public void setAirquality(double airquality) {
+    public void setAirquality(int airquality) {
         this.airquality = airquality;
     }
 
@@ -55,4 +58,8 @@ public class SensorEntry {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
+
+    public int getLightValue(){return lightvalue;}
+
+    public void setLightValue(int lightvalue) {this.lightvalue=lightvalue;}
 }

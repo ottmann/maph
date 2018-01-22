@@ -9,11 +9,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".devices.ArduinoActivity">
 
+    <Button
+        android:id="@+id/BLEConnectionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="Verbindung herstellen"
+        android:onClick="TryToConnect"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Verbunden: Arduino Sensorboard"
+        android:text="Verbunden: -"
         android:id="@+id/textView25"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -79,7 +89,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="18°C"
-        android:id="@+id/textView32"
+        android:id="@+id/TemperaturTextView"
         android:layout_alignTop="@+id/textView30"
         android:layout_toEndOf="@+id/textView26"
         android:layout_alignParentEnd="true"
@@ -94,7 +104,7 @@
         android:text="85%"
         android:id="@+id/textView33"
         android:layout_below="@+id/textView30"
-        android:layout_alignEnd="@+id/textView32"
+        android:layout_alignEnd="@+id/TemperaturTextView"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:gravity="right"/>
