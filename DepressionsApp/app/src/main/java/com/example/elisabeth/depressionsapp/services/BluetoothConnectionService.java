@@ -21,6 +21,8 @@ import com.example.elisabeth.depressionsapp.devices.ArduinoActivity;
 import java.util.List;
 import java.util.UUID;
 
+import static java.lang.Thread.sleep;
+
 /**
  * Created by elisabeth on 11.12.17.
  */
@@ -55,6 +57,18 @@ public class BluetoothConnectionService extends Service {
     public final static UUID UUID_HM_RX_TX =
             UUID.fromString(BluetoothConnectionManager.HM_RX_TX);
 
+    public boolean isDiscovering=false;
+
+    @Override
+    public void onCreate()
+    {
+        super.onCreate();
+
+    }
+    public BluetoothConnectionService()
+    {
+        this.attachBaseContext(this);
+    }
 
     // Implements callback methods for GATT events that the app cares about.  For example,
     // connection change and services discovered.
@@ -106,7 +120,9 @@ public class BluetoothConnectionService extends Service {
 
     private void broadcastUpdate(final String action) {
         final Intent intent = new Intent(action);
-        sendBroadcast(intent);
+        if(!isDiscovering)
+            this.sendBroadcast(intent);
+
     }
 
     private void broadcastUpdate(final String action,final BluetoothGattCharacteristic characteristic) {
@@ -124,8 +140,11 @@ public class BluetoothConnectionService extends Service {
             // getting cut off when longer, need to push on new line, 0A
             intent.putExtra(EXTRA_DATA,String.format("%s", new String(data)));
 
+            try {sleep(5000);}
+            catch(InterruptedException ex) {}
         }
-        sendBroadcast(intent);
+
+        //sendBroadcast(intent);
     }
 
     public class LocalBinder extends Binder {

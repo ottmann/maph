@@ -27,11 +27,13 @@ public class ArduinoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_arduino);
 
         mBluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
-        BluetoothConnectionManager.BLEService.mBluetoothManager=mBluetoothManager;
-        BluetoothConnectionManager.BLEService.initialize();
+        mBluetoothConnectionManager = new BluetoothConnectionManager();
+        mBluetoothConnectionManager.BLEService.mBluetoothManager=mBluetoothManager;
+        mBluetoothConnectionManager.BLEService.initialize();
     }
 
     BluetoothManager mBluetoothManager;
+    BluetoothConnectionManager mBluetoothConnectionManager;
 
     boolean isBLEConnected=false;
 
@@ -40,7 +42,7 @@ public class ArduinoActivity extends AppCompatActivity {
 
         try
         {
-            BluetoothConnectionManager.StartConnection();
+            mBluetoothConnectionManager.StartConnection();
             final TextView ConnectionStateTextView = (TextView) findViewById(R.id.textView25);
             ConnectionStateTextView.setText("Verbunden mit Deppenbox");
         }

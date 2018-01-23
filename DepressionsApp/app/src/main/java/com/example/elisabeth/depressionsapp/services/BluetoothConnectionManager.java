@@ -38,7 +38,6 @@ public class BluetoothConnectionManager {
 
     public static BluetoothGattCharacteristic characteristic=null;
 
-
     static {
         // Sample Services.
         attributes.put("0000ffe0-0000-1000-8000-00805f9b34fb", "HM 10 Serial");
@@ -53,13 +52,42 @@ public class BluetoothConnectionManager {
         return name == null ? defaultName : name;
     }
 
-    public static BluetoothConnectionService BLEService = new BluetoothConnectionService();
+    public BluetoothConnectionManager()
+    {
+        this.BLEService =new BluetoothConnectionService();
 
-    public static void StartConnection() {
+    }
+
+    //public BluetoothConnectionService BLEService = new BluetoothConnectionService();
+    public BluetoothConnectionService BLEService=null;
+
+    public void StartConnection() {
         try {
 
             if (BLEService.connect(ADRESS_DEPPBOX)) {
-                BLEService.mBluetoothGatt.discoverServices();
+                if(BLEService.mBluetoothGatt.discoverServices());
+                {
+
+                    boolean isDeviceDiscoverd=false;
+                    BLEService.isDiscovering=true;
+                    while(!isDeviceDiscoverd)
+                    {
+                        //Log.i(TAG, "found :" + BLEService.mBluetoothGatt.getServices().size() + " Services");
+
+                        if(BLEService.mBluetoothGatt.getServices().size()>0)
+                        {
+
+                            Log.i(TAG, "found :" + BLEService.mBluetoothGatt.getServices().size() + " Services");
+                            isDeviceDiscoverd=true;
+                            BLEService.isDiscovering=false;
+                        }
+                        else
+                        {
+                            sleep(5);
+                        }
+                    }
+                }
+
                 List<BluetoothGattService> services =BLEService.getSupportedGattServices();
 
                 if(services.size()!=0)
@@ -75,8 +103,7 @@ public class BluetoothConnectionManager {
                     }
                     if(characteristic!=null)
                     {
-                        BLEService.setCharacteristicNotification(characteristic,true);
-
+                        BLEService.setCharacteristicNotification(characteristic,true); //start Receving Data
                     }
                 }
 
@@ -85,6 +112,10 @@ public class BluetoothConnectionManager {
             {
 
             }
+
+        }
+        catch(InterruptedException ex)
+        {
 
         }
         catch (Exception ex)
