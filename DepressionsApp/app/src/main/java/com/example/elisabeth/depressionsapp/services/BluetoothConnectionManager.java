@@ -1,20 +1,21 @@
 package com.example.elisabeth.depressionsapp.services;
 
-import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
-import android.bluetooth.BluetoothManager;
-import android.hardware.Sensor;
-import android.os.Bundle;
 import android.util.Log;
 
-import com.example.elisabeth.depressionsapp.R;
+import com.example.elisabeth.depressionsapp.database.SQLiteHelper;
 import com.example.elisabeth.depressionsapp.datamodel.SensorEntry;
+import com.example.elisabeth.depressionsapp.interfaces.SensorValueListener;
+import com.example.elisabeth.depressionsapp.interfaces.SensorValuesChangedListener;
+
+
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
+import java.util.ArrayList;
 
 import static java.lang.Thread.sleep;
 
@@ -28,6 +29,14 @@ public class BluetoothConnectionManager {
     private final static String TAG = BluetoothConnectionManager.class.getSimpleName();
 
     public static SensorEntry SensorValues = new SensorEntry(0, 0,0, "");
+
+    public static boolean isConnected=false;
+
+    public static List<SensorValuesChangedListener>  SVChangedListener =new ArrayList<SensorValuesChangedListener>();
+
+    private static SensorValueManager SVManager = new SensorValueManager();
+
+    public static BluetoothConnectionService BLEService;//=new BluetoothConnectionService();
 
     public static String ADRESS_DEPPBOX = "C8:FD:19:87:CD:71";
 
@@ -52,16 +61,12 @@ public class BluetoothConnectionManager {
         return name == null ? defaultName : name;
     }
 
-    public BluetoothConnectionManager()
+    public static void AddListenerToSensorValuesChanged(SensorValuesChangedListener listener)
     {
-        this.BLEService =new BluetoothConnectionService();
-
+        SVChangedListener.add(listener);
     }
 
-    //public BluetoothConnectionService BLEService = new BluetoothConnectionService();
-    public BluetoothConnectionService BLEService=null;
-
-    public void StartConnection() {
+    public static  boolean StartConnection() {
         try {
 
             if (BLEService.connect(ADRESS_DEPPBOX)) {
@@ -98,19 +103,22 @@ public class BluetoothConnectionManager {
                     {
                         if(service.getUuid().toString().equals(HM_10_CONF))
                         {
+                            BLEService.setValueChangedListener(SVManager);
                             characteristic=service.getCharacteristic(UUID.fromString(HM_RX_TX));
+
                         }
                     }
                     if(characteristic!=null)
                     {
                         BLEService.setCharacteristicNotification(characteristic,true); //start Receving Data
+                        return true;
                     }
                 }
 
             }
             else
             {
-
+                return false;
             }
 
         }
@@ -123,7 +131,17 @@ public class BluetoothConnectionManager {
             throw ex;
         }
 
+        return false;
+    }
 
+    public static boolean StopConnection()
+    {
+
+        BLEService.mBluetoothGatt.disconnect();
+        BLEService.mBluetoothGatt.close();
+        BLEService.mBluetoothGatt=null;
+        //BLEService.disconnect();
+        return  true;
     }
 
     //Erzeugt Zufallswerte für die Sensordaten: Temperatur und Helligkeit
@@ -143,16 +161,21 @@ public class BluetoothConnectionManager {
         setSensorValues(randomtemperatur,airquality,randomlight);
     }
 
-    private static void setSensorValues(int temperatur,int airquality,int lightvalue )
+    public static void setSensorValues(int temperatur,int airquality,int lightvalue )
     {
         Long tsLong = System.currentTimeMillis()/1000;
         String ts = tsLong.toString();
         SensorValues = new SensorEntry(temperatur,airquality,lightvalue,ts);
+
+        Log.i(TAG, "SensorValues set to : T=" +SensorValues.temperature+" A="+SensorValues.airquality+" L="+SensorValues.lightvalue);
     }
 
     public static SensorEntry getSensorValues()
     {
-        GenerateRandomSensorValues();
+        //GenerateRandomSensorValues();
         return SensorValues;
     }
+
+
 }
+

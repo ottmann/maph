@@ -16,10 +16,11 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.example.elisabeth.depressionsapp.devices.ArduinoActivity;
+import com.example.elisabeth.depressionsapp.interfaces.SensorValueListener;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.ArrayList;
 
 import static java.lang.Thread.sleep;
 
@@ -34,6 +35,8 @@ public class BluetoothConnectionService extends Service {
 
 
     private final static String TAG = BluetoothConnectionService.class.getSimpleName();
+
+    public static boolean isConnected=false;
 
     public BluetoothManager mBluetoothManager;
     private BluetoothAdapter mBluetoothAdapter;
@@ -58,13 +61,8 @@ public class BluetoothConnectionService extends Service {
             UUID.fromString(BluetoothConnectionManager.HM_RX_TX);
 
     public boolean isDiscovering=false;
+    private List<SensorValueListener> listeners = new ArrayList<SensorValueListener>();
 
-    @Override
-    public void onCreate()
-    {
-        super.onCreate();
-
-    }
     public BluetoothConnectionService()
     {
         this.attachBaseContext(this);
@@ -96,7 +94,7 @@ public class BluetoothConnectionService extends Service {
         @Override
         public void onServicesDiscovered(BluetoothGatt gatt, int status) {
             if (status == BluetoothGatt.GATT_SUCCESS) {
-                broadcastUpdate(ACTION_GATT_SERVICES_DISCOVERED);
+                //broadcastUpdate(ACTION_GATT_SERVICES_DISCOVERED);
             } else {
                 Log.w(TAG, "onServicesDiscovered received: " + status);
             }
@@ -136,14 +134,17 @@ public class BluetoothConnectionService extends Service {
             final StringBuilder stringBuilder = new StringBuilder(data.length);
             for(byte byteChar : data)
                 stringBuilder.append(String.format("%02X ", byteChar));
-            Log.d(TAG, String.format("%s", new String(data)));
+            Log.d(TAG,"Recieved: "+ String.format("%s", new String(data)));
             // getting cut off when longer, need to push on new line, 0A
             intent.putExtra(EXTRA_DATA,String.format("%s", new String(data)));
 
-            try {sleep(5000);}
+            try {sleep(1000);}
             catch(InterruptedException ex) {}
         }
 
+        for (SensorValueListener listener: listeners) {
+            listener.recieveData(String.format("%s", new String(data)));
+        }
         //sendBroadcast(intent);
     }
 
@@ -330,7 +331,10 @@ public class BluetoothConnectionService extends Service {
 
     }
 
-
+    public void setValueChangedListener (SensorValueListener listener)
+    {
+        this.listeners.add(listener);
+    }
 
 }
 
