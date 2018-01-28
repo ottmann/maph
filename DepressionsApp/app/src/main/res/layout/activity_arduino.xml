@@ -60,9 +60,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Lichtsensor"
+        android:id="@+id/textView34"
+        android:layout_below="@+id/textView28"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Aktuelle Werte: "
         android:id="@+id/textView29"
-        android:layout_below="@+id/textView28"
+        android:layout_below="@+id/textView34"
         android:layout_alignParentStart="true"
         android:layout_marginTop="15dp" />
 
@@ -97,7 +106,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="18,0°C"
+        android:text="18.0°C"
         android:id="@+id/TemperaturTextView"
         android:layout_alignTop="@+id/textView30"
         android:layout_toEndOf="@+id/textView26"

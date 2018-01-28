@@ -28,7 +28,7 @@ public class BluetoothConnectionManager {
 
     private final static String TAG = BluetoothConnectionManager.class.getSimpleName();
 
-    public static SensorEntry SensorValues = new SensorEntry(0, 0,0, "");
+    public static SensorEntry SensorValues = new SensorEntry(18.0, -1,0, "");
 
     public static boolean isConnected=false;
 

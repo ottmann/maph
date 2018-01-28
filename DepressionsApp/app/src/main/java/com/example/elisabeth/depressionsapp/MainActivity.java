@@ -3,6 +3,8 @@ package com.example.elisabeth.depressionsapp;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,17 +13,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.RatingBar;
+import android.widget.TextView;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.regions.Regions;
 import com.example.elisabeth.depressionsapp.database.DatabaseManager;
 import com.example.elisabeth.depressionsapp.datamodel.MoodEntry;
+import com.example.elisabeth.depressionsapp.datamodel.SensorEntry;
 import com.example.elisabeth.depressionsapp.devices.AlexaActivity;
 import com.example.elisabeth.depressionsapp.devices.ArduinoActivity;
 import com.example.elisabeth.depressionsapp.devices.HueActivity;
 import com.example.elisabeth.depressionsapp.devices.WatchActivity;
 
+import com.example.elisabeth.depressionsapp.interfaces.SensorValuesChangedListener;
+
+import com.example.elisabeth.depressionsapp.services.BluetoothConnectionManager;
 import com.example.elisabeth.depressionsapp.services.WifiConnectionManager;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
@@ -32,7 +39,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SensorValuesChangedListener {
 
     public boolean IS_CONNECTED_TO_HOME_WIFI = false;
 
@@ -73,6 +80,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ratingBar.setEnabled(false);
 
         initializeAwsCredentials();
+
+        UpdateValuesInActivity();
+        BluetoothConnectionManager.AddListenerToSensorValuesChanged(this);
     }
 
     private void initializeAwsCredentials() {
@@ -212,5 +222,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // as we use dates as labels, the human rounding to nice readable numbers
     // is not necessary
         graph.getGridLabelRenderer().setHumanRounding(false);
+    }
+
+    //Reciever for new Sensor Values should Update the Values of MainActivity
+    public void UpdateValuesInActivity()
+    {
+        try {
+
+            Handler refresh = new Handler(Looper.getMainLooper());
+            refresh.post(new Runnable() {
+                public void run()
+                {
+                    SensorEntry SensorValues = BluetoothConnectionManager.getSensorValues();
+                    TextView TemperaturTextView = (TextView) findViewById(R.id.textView9);
+                    TemperaturTextView.setText(Double.toString(SensorValues.temperature)+"°C");
+
+                    final TextView AirQualityTextView = (TextView) findViewById(R.id.textView8);
+                    if(SensorValues.airquality==-1)
+                        AirQualityTextView.setText("100%");
+                    else if(SensorValues.airquality==0)
+                        AirQualityTextView.setText("0%");
+                    else if(SensorValues.airquality==1)
+                        AirQualityTextView.setText("40%");
+                    else if(SensorValues.airquality==2)
+                        AirQualityTextView.setText("80%");
+                    else if(SensorValues.airquality==3)
+                        AirQualityTextView.setText("100%");
+                    else
+                        AirQualityTextView.setText("Fehler bei der Messung");
+                }
+            });
+        }
+        catch(Exception ex)
+        {
+            String fehler =ex.getMessage();
+        }
     }
 }
