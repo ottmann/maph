@@ -12,6 +12,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.elisabeth.depressionsapp.R;
+import com.example.elisabeth.depressionsapp.services.MoodLightManager;
 import com.philips.lighting.hue.sdk.PHAccessPoint;
 import com.philips.lighting.hue.sdk.PHHueSDK;
 
@@ -33,10 +34,8 @@ import java.util.Map;
  */
 
 public class HueActivity extends AppCompatActivity {
-    private PHHueSDK phHueSDK;
-    private PHAccessPoint accessPoint;
     private int lightIndex;
-
+    private MoodLightManager lightManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,38 +43,13 @@ public class HueActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hue);
 
         this.lightIndex = 1;
-        phHueSDK = PHHueSDK.create();
+         lightManager = MoodLightManager.getInstance();
 
-        accessPoint = new PHAccessPoint();
-        accessPoint.setIpAddress("192.168.178.24");
-        accessPoint.setUsername("iGctBGnxvNgaXshsdksmfdLulRNFc8C711naVV13");
-        phHueSDK.connect(accessPoint);
-
-        //ToDo Validate if the timeout is to short.
-        //Wait until bridge is connected with the app
-        int timeout_count = 10 * (int)Math.pow(10, 15);
-        for(int i = 0; i < timeout_count && !phHueSDK.isAccessPointConnected(accessPoint); i++){}
-        Log.i("DepressionsApp", "Is access point connected? " + phHueSDK.isAccessPointConnected(accessPoint));
-
-        PHBridge bridge= phHueSDK.getSelectedBridge();
-
-        int brightness = 0;
+        int brightness = lightManager.getBrightnes(0);
         //https://developers.meethue.com/documentation/core-concepts
         int temperature = 153;
-        boolean isOn = false;
+        boolean isOn = true;
 
-        if (bridge == null) {
-            Toast.makeText(this, "Es konnte keine Verbindung zur Bridge hergestellt werden.", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
-        PHLight light = allLights.get(lightIndex);
-
-        PHLightState lightState = light.getLastKnownLightState();
-        brightness =  lightState.getBrightness();
-        temperature = lightState.getCt();
-        isOn = lightState.isOn();
 
         SeekBar brightnessBar = (SeekBar) findViewById(R.id.brightnessBar);
         brightnessBar.setProgress(brightness);
@@ -133,46 +107,12 @@ public class HueActivity extends AppCompatActivity {
     }
 
     public void setBrightness(int brightness) {
-        Log.i("DepressionsApp","Set Brightness: " + brightness);
-        PHBridge bridge = phHueSDK.getSelectedBridge();
-        if (bridge == null) {
-            Toast.makeText(this, "Es konnte keine Verbindung zur Bridge hergestellt werden.", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
-        Log.i("DepressionsApp", "Number of found hue lights: " + allLights.size());
-        if (allLights.size() == 0){
-            Toast.makeText(this, "Es wurden keine Hue Lampen gefunden.", Toast.LENGTH_LONG).show();
-            return;
-        }
-        PHLight light = allLights.get(lightIndex);
-        PHLightState lightState = new PHLightState();
-        lightState.setBrightness(brightness);
-
-        bridge.updateLightState(light, lightState, lightListener);
+        lightManager.updateBrightness(brightness, lightIndex);
         lightStateUpdateNotification();
     }
 
     public void setTemperature(int temperature){
-        Log.i("DepressionsApp","Set Temperature: " + temperature);
-        PHBridge bridge = phHueSDK.getSelectedBridge();
-        if(bridge == null){
-            Toast.makeText(this, "Es konnte keine Verbindung zur Bridge hergestellt werden.", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
-        Log.i("DepressionsApp", "Number of found hue lights: " + allLights.size());
-        if (allLights.size() == 0){
-            Toast.makeText(this, "Es wurden keine Hue Lampen gefunden.", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        PHLight light = allLights.get(lightIndex);
-        PHLightState lightState = new PHLightState();
-        lightState.setCt(temperature);
-        bridge.updateLightState(light, lightState, lightListener);
+        lightManager.updateTemeprature(temperature, lightIndex);
         lightStateUpdateNotification();
     }
 
@@ -181,60 +121,25 @@ public class HueActivity extends AppCompatActivity {
     }
 
     public void turnLightOn(){
-        PHBridge bridge = phHueSDK.getSelectedBridge();
+        PHBridge bridge = lightManager.getBridge();
         List<PHLight> allLights = bridge.getResourceCache().getAllLights();
         PHLight light = allLights.get(lightIndex);
 
         PHLightState lightState = new PHLightState();
         lightState.setOn(true);
-        bridge.updateLightState(light, lightState, lightListener);
+        bridge.updateLightState(light, lightState, lightManager.getLightListener());
     }
 
     public void turnLightOff(){
-        PHBridge bridge = phHueSDK.getSelectedBridge();
+        PHBridge bridge = lightManager.getBridge();
         List<PHLight> allLights = bridge.getResourceCache().getAllLights();
 
         PHLight light = allLights.get(lightIndex);
 
         PHLightState lightState = new PHLightState();
         lightState.setOn(false);
-        bridge.updateLightState(light, lightState, lightListener);
+
+        bridge.updateLightState(light, lightState, lightManager.getLightListener());
     }
 
-    PHLightListener lightListener = new PHLightListener() {
-        @Override
-        public void onReceivingLightDetails(PHLight phLight) {}
-
-        @Override
-        public void onReceivingLights(List<PHBridgeResource> list) {}
-
-        @Override
-        public void onSearchComplete() {}
-
-        @Override
-        public void onSuccess() {}
-
-        @Override
-        public void onError(int i, String s) {
-            Log.e("DepressionsApp", "UpdateLightStateError: " + s);
-        }
-
-        @Override
-        public void onStateUpdate(Map<String, String> map, List<PHHueError> list) {
-            lightStateUpdateNotification();
-        }
-    };
-
-    @Override
-    protected void onDestroy() {
-        PHBridge bridge = phHueSDK.getSelectedBridge();
-        if (bridge != null) {
-
-            if (phHueSDK.isHeartbeatEnabled(bridge)) {
-                phHueSDK.disableHeartbeat(bridge);
-            }
-            phHueSDK.disconnect(bridge);
-        }
-        super.onDestroy();
-    }
 }

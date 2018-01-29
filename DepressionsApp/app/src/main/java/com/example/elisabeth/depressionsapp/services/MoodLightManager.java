@@ -24,8 +24,10 @@ public class MoodLightManager {
     private PHHueSDK phHueSDK;
     private PHAccessPoint accessPoint;
     private int lightIndex;
+    private static MoodLightManager instance;
 
     public MoodLightManager(){
+        MoodLightManager.instance = this;
         this.lightIndex = 0;
         phHueSDK = PHHueSDK.create();
 
@@ -59,10 +61,51 @@ public class MoodLightManager {
         PHLightState lightState = new PHLightState();
         lightState.setBrightness(MAX_BRIGHTNESS_VALUE - lightValue);
 
-        bridge.updateLightState(light, lightState, lightListener);
-
         Log.d("MoodLightManagaer", lightState.getBrightness().toString());
         bridge.updateLightState(light, lightState, lightListener);
+    }
+
+    public void updateTemeprature(int temperature, int index){
+        if(!phHueSDK.isAccessPointConnected(accessPoint)) {
+            return;
+        }
+
+        PHBridge bridge = phHueSDK.getSelectedBridge();
+        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
+        PHLight light = allLights.get(index);
+        PHLightState lightState = new PHLightState();
+        lightState.setCt(temperature);
+        bridge.updateLightState(light, lightState, lightListener);
+    }
+
+    public void updateBrightness(int brightness, int index){
+        if(!phHueSDK.isAccessPointConnected(accessPoint)) {
+            return;
+        }
+
+        PHBridge bridge = phHueSDK.getSelectedBridge();
+        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
+        PHLight light = allLights.get(index);
+        PHLightState lightState = new PHLightState();
+        lightState.setBrightness(brightness);
+        bridge.updateLightState(light, lightState, lightListener);
+    }
+
+    public int getBrightnes(int lightIndex){
+        PHBridge bridge = phHueSDK.getSelectedBridge();
+        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
+        PHLight light = allLights.get(lightIndex);
+
+        PHLightState lightState = light.getLastKnownLightState();
+        return lightState.getBrightness();
+    }
+
+    public PHBridge getBridge(){
+        return phHueSDK.getSelectedBridge();
+    }
+
+    public PHLightListener getLightListener(){
+        return this.lightListener;
     }
 
     public void destroy(){
@@ -101,4 +144,9 @@ public class MoodLightManager {
             Log.d("LightStateUpdate", "new light state is assumed");
         }
     };
+
+    public static MoodLightManager getInstance(){
+        return MoodLightManager.instance;
+    }
+
 }
