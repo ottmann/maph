@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -27,7 +28,7 @@ import com.example.elisabeth.depressionsapp.devices.HueActivity;
 import com.example.elisabeth.depressionsapp.devices.WatchActivity;
 
 import com.example.elisabeth.depressionsapp.interfaces.SensorValuesChangedListener;
-
+import com.example.elisabeth.depressionsapp.services.MoodLightManager;
 import com.example.elisabeth.depressionsapp.services.BluetoothConnectionManager;
 import com.example.elisabeth.depressionsapp.services.WifiConnectionManager;
 import com.jjoe64.graphview.GraphView;
@@ -40,7 +41,9 @@ import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SensorValuesChangedListener {
-
+    private int mInterval = 5000;
+    private Handler mHandler;
+    private MoodLightManager lightManager;
     public boolean IS_CONNECTED_TO_HOME_WIFI = false;
 
     @Override
@@ -83,6 +86,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         UpdateValuesInActivity();
         BluetoothConnectionManager.AddListenerToSensorValuesChanged(this);
+        
+        lightManager = new MoodLightManager();
+        mHandler = new Handler();
+        startSensoreUpdateTask();
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        stopSensoreUpdateTask();
+        lightManager.destroy();
     }
 
     private void initializeAwsCredentials() {
@@ -258,4 +272,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             String fehler =ex.getMessage();
         }
     }
+
+    private void startSensoreUpdateTask(){
+        mUpdateSensoreValues.run();
+    }
+
+    private void stopSensoreUpdateTask(){
+        mHandler.removeCallbacks(mUpdateSensoreValues);
+    }
+
+    Runnable mUpdateSensoreValues = new Runnable() {
+
+        private SensorEntry sensorEntry = new SensorEntry();
+        @Override
+        public void run() {
+            try {
+               SensorEntry newSensoreEntry =  BluetoothConnectionManager.getSensorValues();
+               if(newSensoreEntry.getLightValue() < sensorEntry.getLightValue()*0.8 ||
+                       newSensoreEntry.getLightValue() > sensorEntry.getLightValue()*1.2){
+                   sensorEntry = newSensoreEntry;
+                   lightManager.updateLightMode(sensorEntry.getLightValue());
+               }
+            } finally {
+                mHandler.postDelayed(mUpdateSensoreValues, mInterval);
+            }
+        }
+    };
 }
