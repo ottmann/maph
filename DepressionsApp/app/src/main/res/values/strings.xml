@@ -85,7 +85,9 @@
     <string name="hueActivity_lightTemperature">Lichttemperatur (weiß nach rot)</string>
     <string name="hueActivity_lampSwichtedOn">Ist deine Lampe eingeschaltet?</string>
     <string name="hueActivity_lightExplanation">Die Beleuchtung in deinem Zimmer hat eine direkte Auswirkung auf deine Stimmung. Passe daher über die Helligkeit und Lichttemperatur deine Beleuchtung so an, dass sie dich positiv stimmt.</string>
-
+    <string name="hueActivity_autoBrightness">Automatische Helligkeitsanpassung</string>
+    <string name="hueActivity_connecToBrdige">Verbindung zu Hue herstellen</string>
+    <string name="hueActivity_isConnected">Hue verbunden?</string>
     <!-- Arduino Activity strings -->
     <string name="sensorActivity_name">Arduino Sensorboard</string>
 
@@ -114,5 +116,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="visualisationsActivity_results">Ergebnisse</string>
     <string name="visualisationsActivity_data">Daten</string>
+
 
 </resources>

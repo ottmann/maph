@@ -286,6 +286,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         private SensorEntry sensorEntry = new SensorEntry();
         @Override
         public void run() {
+            if(!lightManager.getAutoBrightness()) return;
             try {
                SensorEntry newSensoreEntry =  BluetoothConnectionManager.getSensorValues();
                if(newSensoreEntry.getLightValue() < sensorEntry.getLightValue()*0.8 ||

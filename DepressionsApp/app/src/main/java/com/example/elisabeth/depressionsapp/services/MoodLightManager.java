@@ -25,10 +25,12 @@ public class MoodLightManager {
     private PHAccessPoint accessPoint;
     private int lightIndex;
     private static MoodLightManager instance;
+    private boolean autoBrightness;
 
     public MoodLightManager(){
         MoodLightManager.instance = this;
         this.lightIndex = 0;
+        this.autoBrightness = true;
         phHueSDK = PHHueSDK.create();
 
         accessPoint = new PHAccessPoint();
@@ -41,12 +43,25 @@ public class MoodLightManager {
     public boolean connect(){
         //ToDo Validate if the timeout is to short.
         //Wait until bridge is connected with the app
+        if(isConnected()) return true;
         int timeout_count = 10 * (int)Math.pow(10, 25);
         phHueSDK.connect(accessPoint);
         for(int i = 0; i < timeout_count && !phHueSDK.isAccessPointConnected(accessPoint); i++){}
         Log.i("DepressionsApp", "Is access point connected? " + phHueSDK.isAccessPointConnected(accessPoint));
         return phHueSDK.isAccessPointConnected(accessPoint);
     }
+
+    public boolean isConnected(){
+        return phHueSDK.isAccessPointConnected(accessPoint);
+    }
+
+    public boolean isOn(){
+        PHBridge bridge = phHueSDK.getSelectedBridge();
+        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
+        PHLight light = allLights.get(lightIndex);
+        return light.getLastKnownLightState().isOn();
+    }
+
     public void updateLightMode(int lightValue){
         Log.d("MoodLightManager", "lightValue: " + lightValue);
         if(!phHueSDK.isAccessPointConnected(accessPoint)) {
@@ -65,7 +80,7 @@ public class MoodLightManager {
         bridge.updateLightState(light, lightState, lightListener);
     }
 
-    public void updateTemeprature(int temperature, int index){
+    public void updateTemperature(int temperature, int index){
         if(!phHueSDK.isAccessPointConnected(accessPoint)) {
             return;
         }
@@ -91,7 +106,7 @@ public class MoodLightManager {
         bridge.updateLightState(light, lightState, lightListener);
     }
 
-    public int getBrightnes(int lightIndex){
+    public int getBrightness(int lightIndex){
         PHBridge bridge = phHueSDK.getSelectedBridge();
         List<PHLight> allLights = bridge.getResourceCache().getAllLights();
         PHLight light = allLights.get(lightIndex);
@@ -100,13 +115,23 @@ public class MoodLightManager {
         return lightState.getBrightness();
     }
 
+    public int getTemperature(int lightIndex) {
+        PHBridge bridge = phHueSDK.getSelectedBridge();
+        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
+        PHLight light = allLights.get(lightIndex);
+
+        PHLightState lightState = light.getLastKnownLightState();
+        return lightState.getCt();
+    }
+
     public PHBridge getBridge(){
         return phHueSDK.getSelectedBridge();
     }
-
     public PHLightListener getLightListener(){
         return this.lightListener;
     }
+    public boolean getAutoBrightness(){return this.autoBrightness;}
+    public void setAutoBrightness(boolean autoBrightness){this.autoBrightness = autoBrightness;}
 
     public void destroy(){
         PHBridge bridge = phHueSDK.getSelectedBridge();
@@ -148,5 +173,6 @@ public class MoodLightManager {
     public static MoodLightManager getInstance(){
         return MoodLightManager.instance;
     }
+
 
 }
