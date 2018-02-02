@@ -4,11 +4,15 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.elisabeth.depressionsapp.MainActivity;
 import com.example.elisabeth.depressionsapp.R;
 import com.example.elisabeth.depressionsapp.devices.samsung.FoodDataHelper;
 import com.example.elisabeth.depressionsapp.devices.samsung.FoodNoteActivity;
@@ -32,13 +36,15 @@ import java.util.Map;
 import java.util.Set;
 
 
-public class WatchActivity extends Activity {
+public class WatchActivity extends AppCompatActivity {
 
     public static final String TAG = "Fitness tracker";
 
 
     public Button GoToFoodNote;
     public Button GoToStepCounter;
+    public Button BackToMainActivity;
+
     private HealthDataStore mStore;
     private FoodDataHelper mDataHelper;
 
@@ -48,23 +54,32 @@ public class WatchActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_watch);
+
         GoToFoodNote = (Button)findViewById(R.id.buttonFoodNote);
         GoToStepCounter = (Button)findViewById(R.id.buttonStepCounter);
-        GoToFoodNote.setOnClickListener(new View.OnClickListener() {
+        BackToMainActivity = (Button)findViewById(R.id.backToMainActivity);
 
+        GoToFoodNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(WatchActivity.this, FoodNoteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        GoToStepCounter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WatchActivity.this, StepCounterActivity.class);
                 startActivity(intent);
 
             }
         });
 
-        GoToStepCounter.setOnClickListener(new View.OnClickListener() {
-
+        BackToMainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WatchActivity.this, StepCounterActivity.class);
+                Intent intent = new Intent(WatchActivity.this, MainActivity.class);
                 startActivity(intent);
 
             }
@@ -79,8 +94,9 @@ public class WatchActivity extends Activity {
         // Create a HealthDataStore instance and set its listener
         mStore = new HealthDataStore(this, mConnectionListener);
         // Request the connection to the health data store
-        mStore.connectService();
-
+        if (mStore != null) {
+            mStore.connectService();
+        }
     }
 
     @Override
@@ -257,15 +273,18 @@ public class WatchActivity extends Activity {
 
         if (item.getItemId() == R.id.connect) {
             requestPermission();
+        } else if (item.getItemId() == R.id.home) {
+            System.out.println("22 BACK BACK BACK BACK BACK BACK");
+            NavUtils.navigateUpFromSameTask(this);
         }
-
         return true;
     }
 
     @Override
     public void onBackPressed() {
-        moveTaskToBack(true);
+        System.out.println("BACK BACK BACK BACK BACK BACK");
+        super.onBackPressed();
+        //moveTaskToBack(true);
     }
-
 }
 

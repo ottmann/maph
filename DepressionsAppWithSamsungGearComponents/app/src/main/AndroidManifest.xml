@@ -3,6 +3,7 @@
     package="com.example.elisabeth.depressionsapp">
 
     <!-- Permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -12,7 +13,6 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
@@ -75,10 +75,6 @@
 
         <!-- devices -->
         <activity
-            android:name=".devices.WatchActivity"
-            android:label="@string/watchActivity_name"
-            android:parentActivityName=".MainActivity" />
-        <activity
             android:name=".devices.ArduinoActivity"
             android:label="@string/sensorActivity_name"
             android:parentActivityName=".MainActivity" />
@@ -90,10 +86,21 @@
             android:name=".devices.AlexaActivity"
             android:label="@string/alexaActivity_name"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".devices.samsung.FoodNoteActivity" />
-        <activity android:name=".devices.samsung.ChooseFoodActivity" />
-        <activity android:name=".devices.samsung.MealStoreActivity" />
-        <activity android:name=".devices.samsung.StepCounterActivity"></activity>
+        <activity
+            android:name=".devices.WatchActivity"
+            android:label="@string/watchActivity_name" />
+        <activity
+            android:name=".devices.samsung.FoodNoteActivity"
+            android:label="Food Diary"/>
+        <activity
+            android:name=".devices.samsung.ChooseFoodActivity"
+            android:label="Choose Food"/>
+        <activity
+            android:name=".devices.samsung.MealStoreActivity"
+            android:label="Store Meal"/>
+        <activity
+            android:name=".devices.samsung.StepCounterActivity"
+            android:label="Step Counter"/>
     </application>
 
 </manifest>

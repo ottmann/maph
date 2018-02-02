@@ -2,6 +2,7 @@ package com.example.elisabeth.depressionsapp.devices.samsung;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
@@ -18,7 +19,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-public class MealStoreActivity extends Activity {
+public class MealStoreActivity extends AppCompatActivity {
 
     @BindView(R.id.saved_food_list)
     ListView mCachedFoodListView;
