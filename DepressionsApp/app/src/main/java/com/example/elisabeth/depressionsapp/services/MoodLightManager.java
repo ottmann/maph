@@ -171,6 +171,9 @@ public class MoodLightManager {
     };
 
     public static MoodLightManager getInstance(){
+        if(MoodLightManager.instance == null){
+            return new MoodLightManager();
+        }
         return MoodLightManager.instance;
     }
 

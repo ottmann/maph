@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         UpdateValuesInActivity();
         BluetoothConnectionManager.AddListenerToSensorValuesChanged(this);
         
-        lightManager = new MoodLightManager();
+        lightManager = MoodLightManager.getInstance();
         mHandler = new Handler();
         startSensoreUpdateTask();
     }
@@ -286,14 +286,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         private SensorEntry sensorEntry = new SensorEntry();
         @Override
         public void run() {
-            if(!lightManager.getAutoBrightness()) return;
             try {
-               SensorEntry newSensoreEntry =  BluetoothConnectionManager.getSensorValues();
-               if(newSensoreEntry.getLightValue() < sensorEntry.getLightValue()*0.8 ||
-                       newSensoreEntry.getLightValue() > sensorEntry.getLightValue()*1.2){
-                   sensorEntry = newSensoreEntry;
-                   lightManager.updateLightMode(sensorEntry.getLightValue());
-               }
+                if(lightManager.getAutoBrightness()) {
+                    SensorEntry newSensoreEntry = BluetoothConnectionManager.getSensorValues();
+
+                    //Make no sense. light brightness should change,
+                    if (newSensoreEntry.getLightValue() < sensorEntry.getLightValue() * 0.8 ||
+                            newSensoreEntry.getLightValue() > sensorEntry.getLightValue() * 1.2) {
+                        sensorEntry = newSensoreEntry;
+                        lightManager.updateLightMode(sensorEntry.getLightValue());
+                    }
+                }
             } finally {
                 mHandler.postDelayed(mUpdateSensoreValues, mInterval);
             }

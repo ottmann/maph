@@ -127,6 +127,7 @@ public class HueActivity extends AppCompatActivity {
         });
 
         connectBridgeButton = (Button)findViewById(R.id.connectBridgeButton);
+        connectBridgeButton.setEnabled(!this.lightManager.isConnected());
         connectBridgeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
