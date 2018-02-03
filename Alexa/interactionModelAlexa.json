@@ -1,0 +1,374 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "Always",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "immer",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "die ganze Zeit",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "andauernd",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "jedesmal",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "immerzu",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "kontinuierlich",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "permanent",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "unaufhörlich",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "unaufhaltsam",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "dauernd",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "immer wieder",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "ununterbrochen",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "ständig",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "unablässig",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "LessThenHalfOfTheTime",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Etwas weniger als die Hälfte der Zeit",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "weniger als die hälfte der zeit",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "den halben Tag",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "2 mal",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "zur hälfte",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "MoreThenHalfOfTheTime",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Etwas mehr als die Hälfte der Zeit",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "mehr als den halben Tag",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "Never",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Zu keinem Zeitpunkt",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "nie",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "zu keiner Zeit",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "niemals",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "kann mich nicht erinnern",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "NowAndThen",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Ab und zu",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "manchmal",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "selten",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "nicht so oft",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "Usually",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "meistens",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "überwiegend",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "gewöhnlich",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "hauptsächlich",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "meist",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "weitgehend",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "fast immer",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "größtenteils",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.PauseIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StartOverIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "AnswerIntent",
+        "samples": [
+          "{Never}",
+          "{Always}",
+          "{LessThenHalfOfTheTime}",
+          "{MoreThanHalfOfTheTime}",
+          "{NowAndThen}",
+          "{Usually}"
+        ],
+        "slots": [
+          {
+            "name": "Never",
+            "type": "Never"
+          },
+          {
+            "name": "Always",
+            "type": "Always"
+          },
+          {
+            "name": "LessThenHalfOfTheTime",
+            "type": "LessThenHalfOfTheTime"
+          },
+          {
+            "name": "MoreThanHalfOfTheTime",
+            "type": "MoreThenHalfOfTheTime"
+          },
+          {
+            "name": "NowAndThen",
+            "type": "NowAndThen"
+          },
+          {
+            "name": "Usually",
+            "type": "Usually"
+          }
+        ]
+      },
+      {
+        "name": "QuizIntent",
+        "samples": [
+          "ja",
+          "start",
+          "starte quiz",
+          "quiz",
+          "test",
+          "starte"
+        ],
+        "slots": []
+      }
+    ],
+    "invocationName": "meine stimmung"
+  }
+}
