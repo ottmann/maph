@@ -273,18 +273,16 @@ public class WatchActivity extends AppCompatActivity {
 
         if (item.getItemId() == R.id.connect) {
             requestPermission();
-        } else if (item.getItemId() == R.id.home) {
-            System.out.println("22 BACK BACK BACK BACK BACK BACK");
-            NavUtils.navigateUpFromSameTask(this);
         }
         return true;
     }
 
     @Override
     public void onBackPressed() {
-        System.out.println("BACK BACK BACK BACK BACK BACK");
-        super.onBackPressed();
-        //moveTaskToBack(true);
+
+        finish();
+        Intent intent = new Intent(WatchActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
 

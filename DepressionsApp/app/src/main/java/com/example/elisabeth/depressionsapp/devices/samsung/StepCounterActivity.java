@@ -288,6 +288,9 @@ public class StepCounterActivity extends AppCompatActivity {
 
         if (item.getItemId() == R.id.connect) {
             requestPermission();
+        } else if (item.getItemId() == R.id.backToMain) {
+            Intent i = new Intent(getBaseContext(), WatchActivity.class);
+            startActivity(i);
         }
 
         return true;

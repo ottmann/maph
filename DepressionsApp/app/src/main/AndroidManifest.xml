@@ -86,20 +86,24 @@
             android:label="@string/alexaActivity_name"/>
         <activity
             android:name=".devices.WatchActivity"
-            android:label="@string/watchActivity_name" />
+            android:parentActivityName=".MainActivity"
+            android:label="@string/watchActivity_name"/>
         <activity
             android:name=".devices.samsung.FoodNoteActivity"
-            android:label="Food Diary"/>
+            android:label="Food Diary"
+            android:parentActivityName=".devices.WatchActivity"/>
         <activity
             android:name=".devices.samsung.ChooseFoodActivity"
-            android:label="Choose Food"/>
+            android:label="Choose Food"
+            android:parentActivityName=".devices.WatchActivity"/>
         <activity
             android:name=".devices.samsung.MealStoreActivity"
-            android:label="Store Meal"/>
+            android:label="Store Meal"
+            android:parentActivityName=".devices.WatchActivity"/>
         <activity
             android:name=".devices.samsung.StepCounterActivity"
-            android:label="Step Counter"/>
-
+            android:label="Step Counter"
+            android:parentActivityName=".devices.WatchActivity"/>
     </application>
 
 </manifest>
