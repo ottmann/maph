@@ -5,9 +5,4 @@
         android:showAsAction="never"
         android:title="@string/connect_to_shealth"
         android:textAllCaps="true"/>
-    <item
-        android:id="@+id/backToMain"
-        android:showAsAction="never"
-        android:title="Back to Watch"
-        android:textAllCaps="true"/>
 </menu>
