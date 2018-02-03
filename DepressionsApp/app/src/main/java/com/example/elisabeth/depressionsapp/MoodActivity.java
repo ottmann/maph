@@ -29,8 +29,7 @@ public class MoodActivity extends AppCompatActivity {
                                     int position, long id) {
 
                 // Show the item position using toast
-                Toast.makeText(MoodActivity.this, "Position " + position,
-                        Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MoodActivity.this, "Position " + position, Toast.LENGTH_SHORT).show();
 
                 //Change pictures in grid view
                 //Record selected image

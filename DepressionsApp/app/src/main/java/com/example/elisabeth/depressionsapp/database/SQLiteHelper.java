@@ -10,7 +10,6 @@ import android.util.Log;
 
 import com.example.elisabeth.depressionsapp.datamodel.MoodEntry;
 import com.example.elisabeth.depressionsapp.datamodel.SensorEntry;
-import com.example.elisabeth.depressionsapp.datamodel.WatchEntry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +25,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final int DB_VERSION = 1;
 
     private static final String TABLE_MOOD = "MoodEntry";
-    private static final String TABLE_SMARTWATCH= "Smartwatch";
     private static final String TABLE_SENSORS = "Sensors";
 
     private static final String ID = "id";
@@ -58,7 +56,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         // on upgrade drop older tables
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_MOOD);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SMARTWATCH);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SENSORS);
         db.execSQL("vacuum");
 
@@ -71,7 +68,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         Log.d(LOG_TAG, "Deleting tables ...");
 
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_MOOD);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SMARTWATCH);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SENSORS);
 
         Log.d(LOG_TAG, "Creating tables ... ");
@@ -82,11 +78,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + " timestamp TEXT);";
         //+ " DATETIME DEFAULT CURRENT_TIMESTAMP)";
 
-        //TODO: fill Smartwatch
-        final String CREATE_TABLE_SMARTWATCH = "CREATE TABLE " + TABLE_SMARTWATCH + " ("
-                + " ID INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + " timestamp TEXT);";
-
         final String CREATE_TABLE_SENSORS = "CREATE TABLE " + TABLE_SENSORS + " ("
                 + " ID INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + " temperature DOUBLE,"
@@ -94,7 +85,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + " timestamp TEXT);";
 
         db.execSQL(CREATE_TABLE_MOOD);
-        db.execSQL(CREATE_TABLE_SMARTWATCH);
         db.execSQL(CREATE_TABLE_SENSORS);
 
         //Log.d(LOG_TAG, "Filling tables ... ");
@@ -114,20 +104,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
         // Inserting Row
         db.insert(TABLE_MOOD, null, values);
-        db.close(); // Closing database connection
-    }
-
-    // Add new watch entry to database
-    public void addWatchEntry(WatchEntry w) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        //values.put("ID", w.getId());
-        //values.put("value1", w.getValue1());
-        //values.put("value2", w.getValue2());
-
-        // Inserting Row
-        db.insert(TABLE_SMARTWATCH, null, values);
         db.close(); // Closing database connection
     }
 
@@ -194,34 +170,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.close(); // Closing database connection
         cursor.close();
         return moodList;
-    }
-
-    //TODO: get all watch entries
-    public List<WatchEntry> getAllWatchEntries() {
-        List<WatchEntry> watchEntryList = new ArrayList<WatchEntry>();
-        String selectQuery = "SELECT  * FROM " + TABLE_SMARTWATCH;
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
-        long numRows = DatabaseUtils.queryNumEntries(db, TABLE_SMARTWATCH);
-        int i= 1;
-
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-                WatchEntry w = new WatchEntry();
-                //s.setId(i);
-                w.setId(Integer.parseInt(cursor.getString(0)));
-                //TODO: add other values
-                //w.setTimestamp(cursor.getString(1));
-
-                watchEntryList.add(w);
-                i++;
-            } while (cursor.moveToNext());
-        }
-        db.close(); // Closing database connection
-        cursor.close();
-        return watchEntryList;
     }
 
     // Get all sensor entries

@@ -19,29 +19,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Ausgewählt: Stille Nacht.mp3"
-        android:id="@+id/textView42"
-        android:layout_below="@+id/textView41"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:src="@drawable/ic_play_circle_outline_black_24dp"
-        android:layout_below="@+id/textView42"
-        android:layout_centerHorizontal="true" />
-
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_below="@+id/imageButton"
+        android:id="@+id/listViewMusic"
+        android:layout_below="@+id/textView41"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

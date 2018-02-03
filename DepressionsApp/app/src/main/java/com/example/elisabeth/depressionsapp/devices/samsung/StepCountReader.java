@@ -1,10 +1,6 @@
 package com.example.elisabeth.depressionsapp.devices.samsung;
 
 /**
- * Created by AnnaToshiba2 on 14.01.2018.
- */
-
-/**
  * Copyright (C) 2014 Samsung Electronics Co., Ltd. All rights reserved.
  *
  * Mobile Communication Division,
