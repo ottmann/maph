@@ -17,13 +17,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     //    implementation files('libs/huelocalsdk.jar')
-//    implementation files('libs/huesdkresources.jar')
+    //    implementation files('libs/huesdkresources.jar')
     //compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:support-v4:24.2.1'
@@ -31,14 +35,15 @@ dependencies {
     compile 'com.jjoe64:graphview:4.2.1'
     compile 'com.github.sujithkanna:smileyrating:1.6.8'
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
-
     // Dependencies for AWS DynamoDB connection
     compile 'com.amazonaws:aws-android-sdk-core:2.6.+'
     compile 'com.amazonaws:aws-android-sdk-s3:2.6.+'
     compile 'com.amazonaws:aws-android-sdk-ddb:2.6.+'
     compile 'com.amazonaws:aws-android-sdk-ddb-mapper:2.6.+'
     compile 'com.amazonaws:aws-android-sdk-mobile-client:2.6.+'
-
-
-
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'io.reactivex:rxjava:1.1.8'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    implementation files('libs/samsung-health-data-v1.3.0.jar')
 }

@@ -73,10 +73,6 @@
 
         <!-- devices -->
         <activity
-            android:name=".devices.WatchActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="@string/watchActivity_name"/>
-        <activity
             android:name=".devices.ArduinoActivity"
             android:parentActivityName=".MainActivity"
             android:label="@string/sensorActivity_name"/>
@@ -88,6 +84,21 @@
             android:name=".devices.AlexaActivity"
             android:parentActivityName=".MainActivity"
             android:label="@string/alexaActivity_name"/>
+        <activity
+            android:name=".devices.WatchActivity"
+            android:label="@string/watchActivity_name" />
+        <activity
+            android:name=".devices.samsung.FoodNoteActivity"
+            android:label="Food Diary"/>
+        <activity
+            android:name=".devices.samsung.ChooseFoodActivity"
+            android:label="Choose Food"/>
+        <activity
+            android:name=".devices.samsung.MealStoreActivity"
+            android:label="Store Meal"/>
+        <activity
+            android:name=".devices.samsung.StepCounterActivity"
+            android:label="Step Counter"/>
 
     </application>
 

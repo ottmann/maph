@@ -110,51 +110,51 @@
     <string name="device_alexa">Sprachsteuerung</string>
     <string name="device_watch">Fitness Tracker</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Samsung Health Strings -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="visualisationsActivity_results">Ergebnisse</string>
     <string name="visualisationsActivity_data">Daten</string>
 
-    <string name="desc">Total Calories</string>
-    <string name="today">Today</string>
-    <string name="breakfast">Breakfast</string>
-    <string name="lunch">Lunch</string>
-    <string name="dinner">Dinner</string>
-    <string name="morning_snack">Morning Snack</string>
-    <string name="afternoon_snack">Afternoon Snack</string>
-    <string name="evening_snack">Evening Snack</string>
+    <string name="desc" translatable="false">Total Calories</string>
+    <string name="today" translatable="false">Today</string>
+    <string name="breakfast" translatable="false">Breakfast</string>
+    <string name="lunch" translatable="false">Lunch</string>
+    <string name="dinner" translatable="false">Dinner</string>
+    <string name="morning_snack" translatable="false">Morning Snack</string>
+    <string name="afternoon_snack" translatable="false">Afternoon Snack</string>
+    <string name="evening_snack" translatable="false">Evening Snack</string>
 
-    <string name="title_choose_food_activity">Choose %s Food</string>
-    <string name="total">Total</string>
-    <string name="unit1">Cals</string>
-    <string name="title_dialog_add_meal">Enter the take times</string>
+    <string name="title_choose_food_activity" translatable="false">Choose %s Food</string>
+    <string name="total" translatable="false">Total</string>
+    <string name="unit1" translatable="false">Cals</string>
+    <string name="title_dialog_add_meal" translatable="false">Enter the take times</string>
 
-    <string name="msg_dialog_add_meal">%1$s : %2$.1f kcals/time</string>
+    <string name="msg_dialog_add_meal" translatable="false">%1$s : %2$.1f kcals/time</string>
 
-    <string name="confirm">Confirm</string>
-    <string name="move_before">Move Day Before</string>
-    <string name="move_next">Move Day Next</string>
-    <string name="choose_food">chooseFood</string>
-    <string name="delete">Delete</string>
+    <string name="confirm" translatable="false">Confirm</string>
+    <string name="move_before" translatable="false">Move Day Before</string>
+    <string name="move_next" translatable="false">Move Day Next</string>
+    <string name="choose_food" translatable="false">chooseFood</string>
+    <string name="delete" translatable="false">Delete</string>
 
-    <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="cancel" translatable="false">Cancel</string>
 
-    <string name="connect_to_shealth">Connect to Samsung Health</string>
+    <string name="connect_to_shealth" translatable="false">Connect to Samsung Health</string>
 
-    <string name="notice">Notice</string>
-    <string name="msg_perm_acquired">All permissions should be acquired</string>
-    <string name="msg_conn_not_available">Connection with Samsung Health is not available</string>
-    <string name="msg_req_install">Please install Samsung Health</string>
-    <string name="msg_req_upgrade">Please upgrade Samsung Health</string>
-    <string name="msg_req_enable">Please enable Samsung Health</string>
-    <string name="msg_req_agree">Please agree with Samsung Health policy</string>
-    <string name="msg_req_available">Please make Samsung Health available</string>
-    <string name="desc_step">Diary</string>
-    <string name="title1">Total</string>
-    <string name="unit1_step">Steps</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="notice" translatable="false">Notice</string>
+    <string name="msg_perm_acquired" translatable="false">All permissions should be acquired</string>
+    <string name="msg_conn_not_available" translatable="false">Connection with Samsung Health is not available</string>
+    <string name="msg_req_install" translatable="false">Please install Samsung Health</string>
+    <string name="msg_req_upgrade" translatable="false">Please upgrade Samsung Health</string>
+    <string name="msg_req_enable" translatable="false">Please enable Samsung Health</string>
+    <string name="msg_req_agree" translatable="false">Please agree with Samsung Health policy</string>
+    <string name="msg_req_available" translatable="false">Please make Samsung Health available</string>
+    <string name="desc_step" translatable="false">Diary</string>
+    <string name="title1" translatable="false">Total</string>
+    <string name="unit1_step" translatable="false">Steps</string>
+    <string name="title_activity_main" translatable="false">MainActivity</string>
+    <string name="section_format" translatable="false">Hello World from section: %1$d</string>
 
 
 </resources>

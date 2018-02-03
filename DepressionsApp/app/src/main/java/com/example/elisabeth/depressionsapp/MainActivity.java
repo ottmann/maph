@@ -178,7 +178,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(i);
         } else if (id == R.id.devices_hue) {
             // Change to hue activity
-            System.out.println("Clicking Hue Activity");
             Intent i = new Intent(getBaseContext(), HueActivity.class);
             startActivity(i);
         } else if (id == R.id.devices_arduino) {
