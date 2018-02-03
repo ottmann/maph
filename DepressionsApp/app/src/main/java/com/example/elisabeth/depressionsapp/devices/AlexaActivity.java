@@ -29,7 +29,7 @@ public class AlexaActivity extends AppCompatActivity {
 
         testResult = (TextView)findViewById(R.id.alexa_result_description);
 
-        updateBluetoothStatus();
+        //updateBluetoothStatus();
     }
 
     private void updateBluetoothStatus() {
