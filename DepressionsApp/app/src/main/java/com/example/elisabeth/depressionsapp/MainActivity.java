@@ -286,6 +286,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         @Override
         public void run() {
             try {
+                MoodLightManager lightManager = MoodLightManager.getInstance();
+
                 if(lightManager.getAutoBrightness()) {
                     SensorEntry newSensoreEntry = BluetoothConnectionManager.getSensorValues();
 

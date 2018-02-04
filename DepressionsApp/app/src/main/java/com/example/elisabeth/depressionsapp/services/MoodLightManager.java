@@ -20,7 +20,7 @@ import java.util.Map;
  */
 
 public class MoodLightManager {
-    private final int MAX_BRIGHTNESS_VALUE = 256;
+    private final int MAX_BRIGHTNESS_VALUE = 254;
     private PHHueSDK phHueSDK;
     private PHAccessPoint accessPoint;
     private int lightIndex;
@@ -35,7 +35,7 @@ public class MoodLightManager {
 
         accessPoint = new PHAccessPoint();
         accessPoint.setIpAddress("192.168.178.24");
-        accessPoint.setUsername("iGctBGnxvNgaXshsdksmfdLulRNFc8C711naVV13");
+        accessPoint.setUsername("Wo6IzbNrslRN84hUp-wCD5F9VfFlJAHyHl1DIKFC");
         this.connect();
 
     }
@@ -43,10 +43,13 @@ public class MoodLightManager {
     public boolean connect(){
         //ToDo Validate if the timeout is to short.
         //Wait until bridge is connected with the app
-        if(isConnected()) return true;
+        if(isConnected()) {
+            return true;
+        }
         int timeout_count = 10 * (int)Math.pow(10, 25);
         phHueSDK.connect(accessPoint);
         for(int i = 0; i < timeout_count && !phHueSDK.isAccessPointConnected(accessPoint); i++){}
+        //while(!phHueSDK.isAccessPointConnected(accessPoint)){}
         Log.i("DepressionsApp", "Is access point connected? " + phHueSDK.isAccessPointConnected(accessPoint));
         return phHueSDK.isAccessPointConnected(accessPoint);
     }

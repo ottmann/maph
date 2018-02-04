@@ -31,6 +31,8 @@ public class HueActivity extends AppCompatActivity {
 
     private SeekBar brightnessBar;
     private SeekBar temperatureBar;
+    private int temperatureMin;
+    private int temperatureMax;
     private Switch onOffButton;
     private Switch autoBrightnessButton;
     private Button connectBridgeButton;
@@ -41,17 +43,21 @@ public class HueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hue);
 
-        this.lightIndex = 1;
+        this.lightIndex = 0;
         this.lightManager = MoodLightManager.getInstance();
 
         //https://developers.meethue.com/documentation/core-concepts
-        int temperature = 153;
+
+        this.temperatureMin = 153;
+        this.temperatureMax = 500;
+
         boolean isOn = false;
         int brightness = 0;
+        int temperature = 0;
 
         if(this.lightManager.isConnected()){
-            brightness = lightManager.getBrightness(0);
-
+            brightness = lightManager.getBrightness(this.lightIndex);
+            temperature = lightManager.getTemperature(this.lightIndex) - temperatureMin;
             PHBridge bridge = lightManager.getBridge();
             List<PHLight> allLights = bridge.getResourceCache().getAllLights();
             PHLight light = allLights.get(lightIndex);
@@ -83,6 +89,7 @@ public class HueActivity extends AppCompatActivity {
         //ToDo: android:min="153"
         temperatureBar.setProgress(temperature);
         temperatureBar.setEnabled(this.lightManager.isConnected());
+        temperatureBar.setMax(this.temperatureMax-this.temperatureMin);
         temperatureBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
@@ -97,7 +104,7 @@ public class HueActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                setTemperature(seekBar.getProgress());
+                setTemperature(seekBar.getProgress()+temperatureMin);
             }
         });
 
@@ -157,7 +164,7 @@ public class HueActivity extends AppCompatActivity {
             brightnessBar.setEnabled(isConnected);
             brightnessBar.setProgress(this.lightManager.getBrightness(lightIndex));
             temperatureBar.setEnabled(isConnected);
-            brightnessBar.setProgress(this.lightManager.getTemperature(lightIndex));
+            temperatureBar.setProgress(this.lightManager.getTemperature(lightIndex));
             onOffButton.setEnabled(isConnected);
             onOffButton.setChecked(this.lightManager.isOn());
             autoBrightnessButton.setEnabled(isConnected);
