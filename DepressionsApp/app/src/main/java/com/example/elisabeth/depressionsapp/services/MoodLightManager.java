@@ -34,15 +34,14 @@ public class MoodLightManager {
         phHueSDK = PHHueSDK.create();
 
         accessPoint = new PHAccessPoint();
-        accessPoint.setIpAddress("192.168.178.24");
+        accessPoint.setIpAddress("192.168.1.102");
+
         accessPoint.setUsername("Wo6IzbNrslRN84hUp-wCD5F9VfFlJAHyHl1DIKFC");
         this.connect();
 
     }
 
     public boolean connect(){
-        //ToDo Validate if the timeout is to short.
-        //Wait until bridge is connected with the app
         if(isConnected()) {
             return true;
         }
