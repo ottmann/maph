@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries",
+                "C:\\Users\\Miriam\\Documents\\Arduino\\libraries",
+                "C:\\Program Files (x86)\\Arduino\\libraries",
+                "C:/Users/Miriam/Documents/Arduino/libraries/AirQuality_Sensor",
+                "C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/Wire/src",
+                "C:/Users/Miriam/Documents/Arduino/libraries/Grove_Digital_Light_Sensor-master"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino",
+                    "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries",
+                    "C:\\Users\\Miriam\\Documents\\Arduino\\libraries",
+                    "C:\\Program Files (x86)\\Arduino\\libraries"
+                ]
+            },
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 3
+}
