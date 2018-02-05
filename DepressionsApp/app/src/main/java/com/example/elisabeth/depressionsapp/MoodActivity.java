@@ -10,6 +10,10 @@ import android.widget.Toast;
 
 import com.example.elisabeth.depressionsapp.helper.ImageAdapter;
 
+/**
+ * Created by elisabeth on 28.11.17.
+ */
+
 public class MoodActivity extends AppCompatActivity {
 
     @Override

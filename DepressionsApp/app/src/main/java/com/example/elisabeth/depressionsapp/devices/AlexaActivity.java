@@ -70,7 +70,7 @@ public class AlexaActivity extends AppCompatActivity {
                 List<DynamoDbEntry> entries = db.getEntries();
 
                 if (entries.isEmpty()) {
-                    testResult.setText("Keine Testergebnisse vorhanden");
+                    testResult.setText(R.string.alexaActivity_noResultsAvailable);
                     return;
                 }
 
@@ -79,9 +79,9 @@ public class AlexaActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     public void run() {
                         if (first.getScore() / first.getTimesDone() > 13) {
-                            testResult.setText("Dein Ergebnis spricht für ein gutes Wohlbefinden.");
+                            testResult.setText(R.string.alexaActivity_positiveResult);
                         } else {
-                            testResult.setText("Eine behandlungsbedürftige Überlastung, ein Burnout oder eine Depression können bei deinem Ergebnis nicht sicher ausgeschlossen werden. Dies ist aber noch keine Diagnose, hierfür solltest du eine gezielte Diagnostik durchführen lassen.");
+                            testResult.setText(R.string.alexaActivity_negativeResult);
                         }
                     }
                 });

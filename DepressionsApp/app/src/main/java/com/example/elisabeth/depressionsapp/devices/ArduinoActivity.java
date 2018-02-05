@@ -22,6 +22,11 @@ import com.example.elisabeth.depressionsapp.services.BluetoothConnectionService;
 
 import org.w3c.dom.Text;
 
+
+/**
+ * Created by miriam on 17.12.17.
+ */
+
 public class ArduinoActivity extends AppCompatActivity implements SensorValuesChangedListener {
 
     @Override

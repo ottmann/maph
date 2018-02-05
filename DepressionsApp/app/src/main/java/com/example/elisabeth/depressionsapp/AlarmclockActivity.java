@@ -31,6 +31,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Created by elisabeth on 28.11.17.
+ */
+
 public class AlarmclockActivity extends AppCompatActivity {
 
     TimePicker alarmTimePicker;
@@ -46,24 +50,10 @@ public class AlarmclockActivity extends AppCompatActivity {
 
     String recommendation1, recommendation2, recommendation3;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarmclock);
-
-        /*Button btn = (Button) findViewById(R.id.buttonSetAlarm);
-        alarmTimePicker = (TimePicker) findViewById(R.id.timePicker);
-        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String toastText = "Du hast einen Alarm für " + alarmTimePicker.getCurrentHour() + ":" + alarmTimePicker.getCurrentMinute() + " Uhr gestellt";
-                Toast.makeText(AlarmclockActivity.this, toastText, Toast.LENGTH_LONG).show();
-            }
-        });*/
 
         button = (Button) findViewById(R.id.buttonSetAlarmTime);
         alarmTv = (TextView) findViewById(R.id.textView50);
@@ -164,6 +154,8 @@ public class AlarmclockActivity extends AppCompatActivity {
         resultTv.setText(recommendation1 + ", " + recommendation2 + " " + getString(R.string.alarmclockActivity_or) + " " + recommendation3);
     }
 
+    //previously used to set an alarm.
+    //TODO: add in 'set alarm' functionality again
     public void OnToggleClicked(View view)
     {
         long time;

@@ -29,6 +29,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Created by elisabeth on 27.12.17.
+ */
+
 public class QuestionsActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = QuestionsActivity.class.getSimpleName();
@@ -42,30 +46,6 @@ public class QuestionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
-
-        //TODO: use to save data to DB
-        /*findViewById(R.id.buttonSubmitForm).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //if an spinner options have been selected
-                if ((!(spinnerItem == 0)) && (!(spinnerItem2 == 0)) && (!(spinnerItem3 == 0)) && (!(spinnerItem4 == 0)) && (!(spinnerItem5 == 0))) {
-                    //Get data and save to DB
-                    //if (dropdownAnswerList1 != null && dropdownAnswerList2 != null) {
-                    //
-                    //}
-
-                    //add mood to the general database
-                    //DatabaseManager.addUserSighting(newMood);
-
-                    //return to the main screen
-                    startActivity(new Intent(QuestionsActivity.this, MainActivity.class));
-                } else {
-                    //show toast prompting user to input an animal and a description
-                    Toast.makeText(getApplication().getBaseContext(), getString(R.string.moodActivity_please_select_from_spinners),
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
 
         //Get all the smiley rating bars from the layout
         smileRating1 = (SmileRating) findViewById(R.id.smile_rating_1);

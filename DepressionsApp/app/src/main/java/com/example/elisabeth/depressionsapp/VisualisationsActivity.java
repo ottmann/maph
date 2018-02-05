@@ -10,6 +10,9 @@ import com.example.elisabeth.depressionsapp.fragments.SimpleFragmentPagerAdapter
 import com.example.elisabeth.depressionsapp.fragments.VisualisationsDataFragment;
 import com.example.elisabeth.depressionsapp.fragments.VisualisationsResultFragment;
 
+/**
+ * Created by elisabeth on 28.11.17.
+ */
 
 public class VisualisationsActivity extends AppCompatActivity  implements VisualisationsDataFragment.OnFragmentInteractionListener, VisualisationsResultFragment.OnFragmentInteractionListener {
 

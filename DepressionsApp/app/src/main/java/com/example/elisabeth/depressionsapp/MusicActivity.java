@@ -36,6 +36,10 @@ import android.widget.Toast;
 
 import com.example.elisabeth.depressionsapp.services.AudioFileManager;
 
+/**
+ * Created by elisabeth on 27.12.17.
+ */
+
 public class MusicActivity extends AppCompatActivity {
     ListView listView;
 
@@ -44,37 +48,19 @@ public class MusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
+        /** Creates an audio file manager and reads all audio files from external storage */
         AudioFileManager am = new AudioFileManager();
         HashMap<String,String> fileList = am.getAllAudioFromDevice(getApplicationContext());
         ArrayList<String> songList = am.getAllSongsFromDevice(getApplicationContext());
-        System.out.println("List");
-        System.out.println("List");
-        System.out.println("List: " + fileList);
-        System.out.println("Items: " + fileList);
+        System.out.println("fileList: " + fileList);
+        System.out.println("songList: " + songList);
 
         // Get ListView object from xml
         listView = (ListView) findViewById(R.id.listViewMusic);
 
-        // Defined Array values to show in ListView
-        String[] values = new String[] { "Android List View",
-                "Adapter implementation",
-                "Simple List View In Android",
-                "Create List View Android",
-                "Android Example",
-                "List View Source Code",
-                "List View Array Adapter",
-                "Android Example List View"
-        };
-
-        // Define a new Adapter
-        // First parameter - Context
-        // Second parameter - Layout for the row
-        // Third parameter - ID of the TextView to which the data is written
-        // Forth - the Array of data
-
+        //Fills the listview on the page with all the sounds from the audioFileManager
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, songList);
-
 
         // Assign adapter to ListView
         listView.setAdapter(adapter);
@@ -103,44 +89,8 @@ public class MusicActivity extends AppCompatActivity {
 
     }
 
-
-/*    // Songs list
-    public ArrayList songsList = new ArrayList();
-
-    Button display;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState)
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music);
-
-        //display = (Button) findViewById(R.id.Display);
-
-        final ArrayList songsListData = new ArrayList();
-
-        AudioFileManager plm = new AudioFileManager();
-        this.songsList = plm.getPlayList();
-
-        // Adding menuItems to ListView
-        final ListAdapter adapter = new SimpleAdapter(this, songsListData,
-                R.layout.single_item_view, new String[] { "songTitle" }, new int[] {});
-
-        // looping through playlist
-        for (int i = 0; i < songsList.size(); i++) {
-            // creating new HashMap
-            Object song = songsList.get(i);
-
-            // adding HashList to ArrayList
-            songsListData.add(song);
-        }
-
-        setListAdapter(adapter);
-
-
-    }*/
-/* } */
-
-
+/** Play audio via Bluetooth */
+//TODO: add back in
 /*
 package com.example.elisabeth.depressionsapp;
 

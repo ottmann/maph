@@ -97,4 +97,15 @@
     <string name="visualisationsActivity_sleepLegend">Stunden Schlaf</string>
     <string name="visualisationsActivity_results">Ergebnisse</string>
     <string name="visualisationsActivity_data">Daten</string>
+    <string name="alexaActivity_noResultsAvailable">Keine Testergebnisse vorhanden</string>
+    <string name="alexaActivity_positiveResult">Dein Ergebnis spricht für ein gutes Wohlbefinden.</string>
+    <string name="hueActivity_autoBrightness">Automatische Helligkeitsanpassung</string>
+    <string name="hueActivity_connecToBrdige">Verbindung zu Hue herstellen</string>
+    <string name="hueActivity_isConnected">Hue verbunden?</string>
+    <string name="alexaActivity_negativeResult">Eine behandlungsbedürftige Überlastung, ein Burnout oder eine Depression können bei deinem Ergebnis nicht sicher ausgeschlossen werden. Dies ist aber noch keine Diagnose, hierfür solltest du eine gezielte Diagnostik durchführen lassen.</string>
+    <string name="hueActivity_settingsUpdated">Die Einstellungen für deine Lampe wurden aktualisiert.</string>
+    <string name="hueActivity_noConnectionPossible">Es konnte keine Verbindung hergestellt werden.</string>
+    <string name="hueActivity_connectionAcquired">Es wurde eine Verbindung zur Bridge hergestellt.</string>
+    <string name="hueActivity_lampConnected">Lampe ist verbunden!</string>
+    <string name="hueActivity_noLampConnected">Lampe ist nicht verbunden!</string>
 </resources>

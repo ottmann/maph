@@ -150,10 +150,10 @@ public class HueActivity extends AppCompatActivity {
     public void updateConnectionStateText(){
         if(this.lightManager.connect()) {
             connected.setTextColor(Color.rgb(0, 100,0));
-            connected.setText("Lampe ist verbunden!");
+            connected.setText(R.string.hueActivity_lampConnected);
         }else{
             connected.setTextColor(Color.RED);
-            connected.setText("Lampe ist nicht verbunden!");
+            connected.setText(R.string.hueActivity_noLampConnected);
         }
     }
 
@@ -168,9 +168,9 @@ public class HueActivity extends AppCompatActivity {
             onOffButton.setEnabled(isConnected);
             onOffButton.setChecked(this.lightManager.isOn());
             autoBrightnessButton.setEnabled(isConnected);
-            Toast.makeText(this, "Es wurde eine Verbindung zur Bridge hergestellt.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.hueActivity_connectionAcquired, Toast.LENGTH_LONG).show();
         }else
-            Toast.makeText(this, "Es konnte keine Verbindung hergestellt werden.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.hueActivity_noConnectionPossible, Toast.LENGTH_LONG).show();
         return isConnected;
     }
 
@@ -185,7 +185,7 @@ public class HueActivity extends AppCompatActivity {
     }
 
     public void lightStateUpdateNotification(){
-        Toast.makeText(this, "Die Einstellungen für deine Lampe wurden aktualisiert.", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.hueActivity_settingsUpdated, Toast.LENGTH_LONG).show();
     }
 
     public void turnLightOn(){

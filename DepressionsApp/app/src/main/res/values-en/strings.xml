@@ -98,6 +98,17 @@
     <string name="visualisationsActivity_sleepLegend">Hours of sleep</string>
     <string name="visualisationsActivity_data">Data</string>
     <string name="visualisationsActivity_results">Results</string>
+    <string name="alexaActivity_noResultsAvailable">No test results available</string>
+    <string name="alexaActivity_positiveResult">Your result is positive! No depressive thoughts detected.</string>
+    <string name="hueActivity_autoBrightness">"Automatically adapt brightness "</string>
+    <string name="hueActivity_connecToBrdige">Connect to Bridge</string>
+    <string name="hueActivity_isConnected">Is the Hue connected?</string>
+    <string name="alexaActivity_negativeResult">Overload, burnout or depression cannot be ruled out for your result. However, this is not yet a diagnosis, you should have a targeted diagnosis carried out.</string>
+    <string name="hueActivity_settingsUpdated">The settings for your lamp have been updated.</string>
+    <string name="hueActivity_noConnectionPossible">No connection could be established.</string>
+    <string name="hueActivity_connectionAcquired">Connection to the Bridge established.</string>
+    <string name="hueActivity_lampConnected">Lamp is connected!</string>
+    <string name="hueActivity_noLampConnected">No lamp connected!</string>
 
 
 </resources>

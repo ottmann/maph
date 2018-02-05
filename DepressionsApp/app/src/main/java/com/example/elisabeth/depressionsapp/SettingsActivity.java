@@ -12,6 +12,10 @@ import android.widget.RadioGroup;
 
 import java.util.Locale;
 
+/**
+ * Created by elisabeth on 28.11.17.
+ */
+
 public class SettingsActivity extends AppCompatActivity {
 
     boolean first;
@@ -50,6 +54,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         //TODO: https://stackoverflow.com/questions/20343220/how-to-change-the-language-of-android-app-from-within
+        //TODO: language changes correctly, but display of correct radiobutton is faulty
         /*//langGroup.clearCheck();
         Locale current = getResources().getConfiguration().locale;
         if (current.equals(Locale.ENGLISH)) {
@@ -66,8 +71,8 @@ public class SettingsActivity extends AppCompatActivity {
 
     public Locale getLocale() {
         return getResources().getConfiguration().locale;
-
     }
+
     /**
      * Changes the app's Locale
      */

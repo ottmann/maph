@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.elisabeth.depressionsapp.R;
 
+/** receiver for the alarm clock functionality */
 public class AlarmReceiver extends BroadcastReceiver
 {
     @Override

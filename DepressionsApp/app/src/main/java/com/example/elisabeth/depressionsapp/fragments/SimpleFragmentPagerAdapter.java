@@ -9,6 +9,8 @@ import com.example.elisabeth.depressionsapp.R;
 
 /**
  * Created by elisabeth on 05.01.18.
+ *
+ * Fragment adapter for the Visualisations Page
  */
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 

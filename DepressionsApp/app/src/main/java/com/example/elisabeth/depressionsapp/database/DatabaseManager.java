@@ -13,9 +13,7 @@ import java.util.List;
  */
 public class DatabaseManager {
 
-    private List<MoodEntry> allMoodEntries = new ArrayList<MoodEntry>();
     public static SQLiteHelper sqlh;
-    private SQLiteDatabase database = sqlh.getWritableDatabase();
 
     public DatabaseManager () {
 
@@ -38,11 +36,4 @@ public class DatabaseManager {
         sqlh.addMood(mood);
     }
     //public static long getNumberOfMoodEntries() { return sqlh.numberOfEntries(); }
-
-    //TODO: really necessary?
-    //public static void deleteMood(int id) { sqlh.deleteMood(id);}
-    //public static void updateMood(int id, int score, String timestamp) { sqlh.updateMood(id, score, timestamp);}
-
-    /* All functions concerning ... */
-    //TODO: add other functions
 }
