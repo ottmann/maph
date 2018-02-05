@@ -149,7 +149,7 @@ public class HueActivity extends AppCompatActivity {
 
     public void updateConnectionStateText(){
         if(this.lightManager.connect()) {
-            connected.setTextColor(Color.GREEN);
+            connected.setTextColor(Color.rgb(0, 100,0));
             connected.setText("Lampe ist verbunden!");
         }else{
             connected.setTextColor(Color.RED);
